@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Overheards, thoughts and tech - rst</title>
+        <title>Overheard, thoughts and tech - rst</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
-                <link href="http://weerapurage.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Overheards, thoughts and tech Atom Feed" />
-                        <link href="http://weerapurage.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Overheards, thoughts and tech RSS Feed" />
+                <link href="http://weerapurage.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Overheard, thoughts and tech Atom Feed" />
+                        <link href="http://weerapurage.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Overheard, thoughts and tech RSS Feed" />
         
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -24,7 +24,7 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="../">Overheards, thoughts and tech </a></h1>
+                <h1><a href="../">Overheard, thoughts and tech </a></h1>
                 <nav><ul>
                                                                                                     <li ><a href="../category/tech.html">tech</a></li>
                                 </ul></nav>
@@ -34,7 +34,7 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="../pelican-for-site-generation.html">Pelican for site generation</a></h1> 
+                    <h1 class="entry-title"><a href="../pelican.html">Pelican</a></h1> 
                     <footer class="post-info">
         <abbr class="published" title="2012-12-05T00:00:00">
                 Wed 05 December 2012
@@ -44,10 +44,60 @@
                 By <a class="url fn" href="../author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
         </address>
         <p>In <a href="../category/tech.html">tech</a>. </p>
-<p>tags: <a href="../tag/python.html">python</a><a href="../tag/blog.html">blog</a><a href="../tag/rst.html">rst</a><a href="../tag/pelican.html">pelican</a></p>
-</footer><!-- /.post-info --><p>Even though I initally planned to use Django with bootstrap , I was impressed after seeing few websites
-generated using pelican.</p>
-<p>There are <a href="../pelican-for-site-generation.html#disqus_thread">comments</a>.</p>                </article>
+<p>tags: <a href="../tag/pelican.html">pelican</a><a href="../tag/python.html">python</a><a href="../tag/rst.html">rst</a></p>
+</footer><!-- /.post-info --><div class="section" id="experience">
+<h2>Experience</h2>
+<p><a class="reference external" href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> is a nice library for generating websites where you can use <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reST</a> to write html pages.
+Primarily, I choose to use pelican because I can use emacs to write reST pages and rst is painless
+to write compared to plain old html. In this post, write my experience of getting this site up and running with pelican.
+Hopefully, it will help someone like me to get started on using pelican.
+Since this is my first few iterations with pelican settings file looks primitive. Please feel free to send along suggestions for improvements.</p>
+</div>
+<div class="section" id="install">
+<h2>Install</h2>
+<p>Once pip installed straight forward to install 'pelican'.</p>
+<pre class="literal-block">
+$ pip install pelican
+</pre>
+</div>
+<div class="section" id="settings-file">
+<h2>Settings file</h2>
+<pre class="code python literal-block">
+<span class="c"># -*- coding: utf-8 -*-</span>
+<span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">'Dinesh Weerapurage'</span>
+<span class="n">AUTHOR_SAVE_AS</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">SITENAME</span> <span class="o">=</span> <span class="s">'Overheards, thoughts and tech'</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s">'http://weerapurage.org'</span>
+<span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">'US/Eastern'</span>
+
+<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">'https://github.com/xydinesh/xydinesh.github.com'</span>
+
+<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&quot;weerapurageorg&quot;</span>
+<span class="n">PDF_GENERATOR</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">REVERSE_CATEGORY_ORDER</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">LOCALE</span> <span class="o">=</span> <span class="s">&quot;C&quot;</span>
+<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">FEED_ALL_RSS</span> <span class="o">=</span> <span class="s">'feeds/all.rss.xml'</span>
+<span class="n">CATEGORY_FEED_RSS</span> <span class="o">=</span> <span class="s">'feeds/</span><span class="si">%s</span><span class="s">.rss.xml'</span>
+
+<span class="n">SOCIAL</span> <span class="o">=</span> <span class="p">((</span><span class="s">'twitter'</span><span class="p">,</span> <span class="s">'http://twitter.com/xydinesh'</span><span class="p">),</span>
+      <span class="p">(</span><span class="s">'github'</span><span class="p">,</span> <span class="s">'http://github.com/xydinesh'</span><span class="p">),)</span>
+
+<span class="c"># global metadata to all the contents</span>
+<span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">((</span><span class="s">'yeah'</span><span class="p">,</span> <span class="s">'it is'</span><span class="p">),)</span>
+<span class="c"># Default theme</span>
+<span class="n">THEME</span> <span class="o">=</span> <span class="s">'notmyidea'</span>
+</pre>
+</div>
+<div class="section" id="themes">
+<h2>Themes</h2>
+<p>There are good number of pelicen <a class="reference external" href="https://github.com/getpelican/pelican-themes">themes</a> available on github where you can fork/clone them and use.
+Just need to modify settings file (which I called settings.py)</p>
+<pre class="literal-block">
+THEME = '../pelican-themes/notmyidea-cms'
+</pre>
+</div>
+<p>There are <a href="../pelican.html#disqus_thread">comments</a>.</p>                </article>
                                     <p class="paginator">
         Page 1 / 1
     </p>

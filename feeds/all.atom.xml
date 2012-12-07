@@ -1,4 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Overheards, thoughts and tech</title><link href="http://weerapurage.org/" rel="alternate"></link><link href="http://weerapurage.org/feeds/all.atom.xml" rel="self"></link><id>http://weerapurage.org/</id><updated>2012-12-05T00:00:00-05:00</updated><entry><title>Pelican for site generation</title><link href="http://weerapurage.org/pelican-for-site-generation.html" rel="alternate"></link><updated>2012-12-05T00:00:00-05:00</updated><author><name>Dinesh Weerapurage</name></author><id>tag:weerapurage.org,2012-12-05:pelican-for-site-generation.html</id><summary type="html">&lt;p&gt;Even though I initally planned to use Django with bootstrap , I was impressed after seeing few websites
-generated using pelican.&lt;/p&gt;
-</summary><category term="python"></category><category term="blog"></category><category term="rst"></category><category term="pelican"></category></entry></feed>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Overheard, thoughts and tech</title><link href="http://weerapurage.org/" rel="alternate"></link><link href="http://weerapurage.org/feeds/all.atom.xml" rel="self"></link><id>http://weerapurage.org/</id><updated>2012-12-05T00:00:00-05:00</updated><entry><title>Pelican</title><link href="http://weerapurage.org/pelican.html" rel="alternate"></link><updated>2012-12-05T00:00:00-05:00</updated><author><name>Dinesh Weerapurage</name></author><id>tag:weerapurage.org,2012-12-05:pelican.html</id><summary type="html">&lt;div class="section" id="experience"&gt;
+&lt;h2&gt;Experience&lt;/h2&gt;
+&lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.1.1/"&gt;Pelican&lt;/a&gt; is a nice library for generating websites where you can use &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reST&lt;/a&gt; to write html pages.
+Primarily, I choose to use pelican because I can use emacs to write reST pages and rst is painless
+to write compared to plain old html. In this post, write my experience of getting this site up and running with pelican.
+Hopefully, it will help someone like me to get started on using pelican.
+Since this is my first few iterations with pelican settings file looks primitive. Please feel free to send along suggestions for improvements.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="section" id="install"&gt;
+&lt;h2&gt;Install&lt;/h2&gt;
+&lt;p&gt;Once pip installed straight forward to install 'pelican'.&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$ pip install pelican
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="settings-file"&gt;
+&lt;h2&gt;Settings file&lt;/h2&gt;
+&lt;pre class="code python literal-block"&gt;
+&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Dinesh Weerapurage'&lt;/span&gt;
+&lt;span class="n"&gt;AUTHOR_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Overheards, thoughts and tech'&lt;/span&gt;
+&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://weerapurage.org'&lt;/span&gt;
+&lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'US/Eastern'&lt;/span&gt;
+
+&lt;span class="n"&gt;GITHUB_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'https://github.com/xydinesh/xydinesh.github.com'&lt;/span&gt;
+
+&lt;span class="n"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;weerapurageorg&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;PDF_GENERATOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;span class="n"&gt;REVERSE_CATEGORY_ORDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;span class="n"&gt;LOCALE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;C&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
+&lt;span class="n"&gt;FEED_ALL_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'feeds/all.rss.xml'&lt;/span&gt;
+&lt;span class="n"&gt;CATEGORY_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'feeds/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;.rss.xml'&lt;/span&gt;
+
+&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://twitter.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://github.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+
+&lt;span class="c"&gt;# global metadata to all the contents&lt;/span&gt;
+&lt;span class="n"&gt;DEFAULT_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'yeah'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'it is'&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+&lt;span class="c"&gt;# Default theme&lt;/span&gt;
+&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'notmyidea'&lt;/span&gt;
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="themes"&gt;
+&lt;h2&gt;Themes&lt;/h2&gt;
+&lt;p&gt;There are good number of pelicen &lt;a class="reference external" href="https://github.com/getpelican/pelican-themes"&gt;themes&lt;/a&gt; available on github where you can fork/clone them and use.
+Just need to modify settings file (which I called settings.py)&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+THEME = '../pelican-themes/notmyidea-cms'
+&lt;/pre&gt;
+&lt;/div&gt;
+</summary><category term="pelican"></category><category term="python"></category><category term="rst"></category></entry></feed>

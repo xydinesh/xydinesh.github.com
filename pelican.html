@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Pelican for site generation</title>
+        <title>Pelican</title>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
-                
+                <link href="http://weerapurage.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Overheard, thoughts and tech Atom Feed" />
+                        <link href="http://weerapurage.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Overheard, thoughts and tech RSS Feed" />
+        
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -22,17 +24,17 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href=".">Overheards, thoughts and tech </a></h1>
-                                <nav>
-                                                                                                    <a href="./category/tech.html">tech</a>&nbsp;
-                                </nav>
+                <h1><a href="./">Overheard, thoughts and tech </a></h1>
+                <nav><ul>
+                                                                                                    <li class="active"><a href="./category/tech.html">tech</a></li>
+                                </ul></nav>
         </header><!-- /#banner -->
         <section id="content" class="body">
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="pelican-for-site-generation.html" rel="bookmark"
-           title="Permalink to Pelican for site generation">Pelican for site generation</a></h1>
+        <a href="./pelican.html" rel="bookmark"
+           title="Permalink to Pelican">Pelican</a></h1>
           </header>
 
     <div class="entry-content">
@@ -40,21 +42,26 @@
         <abbr class="published" title="2012-12-05T00:00:00">
                 Wed 05 December 2012
         </abbr>
-<p>tags: <a href="./tag/pelican.html">pelican</a><a href="./tag/python.html">python</a><a href="./tag/rst.html">rst</a></p></footer><!-- /.post-info -->      <div class="section" id="experience">
+
+                <address class="vcard author">
+                By <a class="url fn" href="./author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
+        </address>
+        <p>In <a href="./category/tech.html">tech</a>. </p>
+<p>tags: <a href="./tag/pelican.html">pelican</a><a href="./tag/python.html">python</a><a href="./tag/rst.html">rst</a></p>
+</footer><!-- /.post-info -->      <div class="section" id="experience">
 <h2>Experience</h2>
-<p>Even though I initally planned to use Django with bootstrap , I was impressed after seeing few websites
-generated using pelican. In this post I write my experience of getting this site up and running with
-pelican.</p>
+<p><a class="reference external" href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> is a nice library for generating websites where you can use <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reST</a> to write html pages.
+Primarily, I choose to use pelican because I can use emacs to write reST pages and rst is painless
+to write compared to plain old html. In this post, write my experience of getting this site up and running with pelican.
+Hopefully, it will help someone like me to get started on using pelican.
+Since this is my first few iterations with pelican settings file looks primitive. Please feel free to send along suggestions for improvements.</p>
 </div>
 <div class="section" id="install">
 <h2>Install</h2>
-<p>Once pip installed straight forward to install 'pelican'. Also I would encourage to install 'fabric' too.</p>
-<p>$ pip install pelican</p>
-<p>$ pip install fabric</p>
-<div class="note">
-<p class="first admonition-title">Note</p>
-<p class="last">You may run into problem installing fabric on Windows sometimes. I will write another post explaining solutions I used.</p>
-</div>
+<p>Once pip installed straight forward to install 'pelican'.</p>
+<pre class="literal-block">
+$ pip install pelican
+</pre>
 </div>
 <div class="section" id="settings-file">
 <h2>Settings file</h2>
@@ -67,6 +74,7 @@ pelican.</p>
 <span class="n">TIMEZONE</span> <span class="o">=</span> <span class="s">'US/Eastern'</span>
 
 <span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">'https://github.com/xydinesh/xydinesh.github.com'</span>
+
 <span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&quot;weerapurageorg&quot;</span>
 <span class="n">PDF_GENERATOR</span> <span class="o">=</span> <span class="bp">False</span>
 <span class="n">REVERSE_CATEGORY_ORDER</span> <span class="o">=</span> <span class="bp">True</span>
@@ -86,9 +94,11 @@ pelican.</p>
 </div>
 <div class="section" id="themes">
 <h2>Themes</h2>
-</div>
-<div class="section" id="fabfile">
-<h2>Fabfile</h2>
+<p>There are good number of pelicen <a class="reference external" href="https://github.com/getpelican/pelican-themes">themes</a> available on github where you can fork/clone them and use.
+Just need to modify settings file (which I called settings.py)</p>
+<pre class="literal-block">
+THEME = '../pelican-themes/notmyidea-cms'
+</pre>
 </div>
 
     </div><!-- /.entry-content -->
@@ -96,7 +106,7 @@ pelican.</p>
       <h2>Comments !</h2>
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-        var disqus_identifier = "pelican-for-site-generation.html";
+        var disqus_identifier = "pelican.html";
         (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = 'http://weerapurageorg.disqus.com/embed.js';
@@ -111,7 +121,8 @@ pelican.</p>
                                 <div class="social">
                         <h2>social</h2>
                         <ul>
-                            <li><a href="http://weerapurage.org/" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            <li><a href="http://weerapurage.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                                                        <li><a href="http://weerapurage.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
                             
                                                     <li><a href="http://twitter.com/xydinesh">twitter</a></li>
                                                     <li><a href="http://github.com/xydinesh">github</a></li>
@@ -121,9 +132,10 @@ pelican.</p>
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                     Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>. Theme is using <a href="http://github.com/getpelican/pelican-themes" target="_blank">cebong</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
 
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
 <script type="text/javascript">
