@@ -1,55 +1,138 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Overheard, thoughts and tech</title><link>http://weerapurage.org/</link><description></description><atom:link href="http://weerapurage.org/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 06 Dec 2012 00:00:00 -0500</lastBuildDate><item><title>Video Embedding</title><link>http://weerapurage.org/video-embedding.html</link><description>&lt;p&gt;Nice, there is a ''.. youtube::'' derective to embed youtube video with rst. In here, &lt;a class="reference external" href="http://countergram.com/youtube-in-rst"&gt;youtube&lt;/a&gt; directive is discussed in detail.&lt;/p&gt;
-&lt;div class="youtube" align="left"&gt;&lt;iframe width="420" height="315" src="http://www.youtube.com/embed/2_2lGkEU4Xs" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Thu, 06 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-06:video-embedding.html</guid><category>python</category><category>rst</category></item><item><title>Pelican</title><link>http://weerapurage.org/pelican.html</link><description>&lt;div class="section" id="experience"&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Overheard, thoughts and tech</title><link>http://weerapurage.org/</link><description></description><atom:link href="http://weerapurage.org/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 07 Dec 2012 00:00:00 -0500</lastBuildDate><item><title>Install ‘Fabric’ on Windows</title><link>http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/</link><description>&lt;div class="section" id="easy"&gt;
+&lt;h2&gt;Easy&lt;/h2&gt;
+&lt;p&gt;If it works, pretty easy to do with&amp;nbsp;pip&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+pip install fabric
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="trouble"&gt;
+&lt;h2&gt;Trouble&lt;/h2&gt;
+&lt;p&gt;Error while installing fabric on&amp;nbsp;windows&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+running build_ext
+building 'Crypto.Random.OSRNG.winrandom' extension
+warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastmath.
+
+error: Unable to find vcvarsall.bat
+
+----------------------------------------
+Command C:\Python27\python.exe -c &amp;quot;import setuptools;__file__='C:\\Users\\Dinesh
+\\Research\\build\\pycrypto\\setup.py';exec(compile(open(__file__).read().replac
+e('\r\n', '\n'), __file__, 'exec'))&amp;quot; install --single-version-externally-managed
+ --record c:\users\dinesh\appdata\local\temp\pip-5bsfzh-record\install-record.tx
+ t failed with error code 1 in C:\Users\Dinesh\Research\build\pycrypto
+ Storing complete log in C:\Users\Dinesh\AppData\Roaming\pip\pip.log
+&lt;/pre&gt;
+&lt;p&gt;There is a solution describe on &lt;a class="reference external" href="http://stackoverflow.com/questions/2817869/error-unable-to-find-vcvarsall-bat"&gt;StackOverFlow&lt;/a&gt; where it suggest to do&amp;nbsp;following&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;SET VS90COMNTOOLS=%VS100COMNTOOLS%
+&lt;/pre&gt;
+&lt;p&gt;And&amp;nbsp;then&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$pip install fabric
+&lt;/pre&gt;
+&lt;p&gt;It gives following error, Argh&amp;nbsp;!&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+build\temp.win32-2.7\Release\src\winrandom.pyd.manifest : general error c1010070
+: Failed to load and parse the manifest. The system cannot find the file specifi
+ed.
+warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastmath.
+
+error: command 'mt.exe' failed with exit status 31
+
+----------------------------------------
+Command C:\Python27\python.exe -c &amp;quot;import setuptools;__file__='C:\\Users\\Dinesh
+\\Research\\build\\pycrypto\\setup.py';exec(compile(open(__file__).read().replac
+e('\r\n', '\n'), __file__, 'exec'))&amp;quot; install --single-version-externally-managed
+ --record c:\users\dinesh\appdata\local\temp\pip-igndoa-record\install-record.tx
+ t failed with error code 1 in C:\Users\Dinesh\Research\build\pycrypto
+ Storing complete log in C:\Users\Dinesh\AppData\Roaming\pip\pip.log
+&lt;/pre&gt;
+&lt;p&gt;For the above error also, Found and answer on &lt;a class="reference external" href="http://fuyun.org/2009/12/install-mysql-for-python-on-windows/"&gt;fuyun&lt;/a&gt; &amp;#8216;s&amp;nbsp;website.&lt;/p&gt;
+&lt;p&gt;I will quote his solution&amp;nbsp;here&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+Now try to build it again. I got this error:
+
+buildtemp.win32-2.6Release_mysql.pyd.manifest : general error c1010070: Failed to load and parse the manifest. The system cannot find  the file specified.
+error: command ‘mt.exe’ failed with exit status 31
+
+To fix this problem, go to C:Python26Libdistutils, edit msvc9compiler.py, search for ‘MANIFESTFILE’, you will find the following line
+
+ld_args.append(‘/MANIFESTFILE:’ + temp_manifest)
+
+Then append the following line after the above line,
+
+ld_args.append(‘/MANIFEST’)
+&lt;/pre&gt;
+&lt;p&gt;then&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+$pip install fabric
+
+Creating library build\temp.win32-2.7\Release\src\_counter.lib and object
+build\temp.win32-2.7\Release\src\_counter.exp
+ C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe -nologo -mani
+ fest build\temp.win32-2.7\Release\src\_counter.pyd.manifest -outputresource:buil
+ d\lib.win32-2.7\Crypto\Util\_counter.pyd;2
+ warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastm
+ ath.
+
+ Successfully installed pycrypto
+ Cleaning up...
+&lt;/pre&gt;
+&lt;p&gt;Yay ! works like a&amp;nbsp;charm&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Fri, 07 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-07:posts/2012/Dec/07/install-fabric-on-windows/</guid><category>python</category><category>fabric</category><category>windows</category><category>pip</category></item><item><title>Video Embedding</title><link>http://weerapurage.org/posts/2012/Dec/06/video-embedding/</link><description>&lt;p&gt;Nice, there is a &amp;#8221;.. youtube::&amp;#8221; derective to embed youtube video with rst. In here, &lt;a class="reference external" href="http://countergram.com/youtube-in-rst"&gt;youtube&lt;/a&gt; directive is discussed in&amp;nbsp;detail.&lt;/p&gt;
+&lt;div class="youtube" align="left"&gt;&lt;iframe width="420" height="315" src="http://www.youtube.com/embed/2_2lGkEU4Xs" frameborder="0"&gt;&lt;/iframe&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Thu, 06 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-06:posts/2012/Dec/06/video-embedding/</guid><category>python</category><category>rst</category></item><item><title>Pelican</title><link>http://weerapurage.org/posts/2012/Dec/05/pelican/</link><description>&lt;div class="section" id="experience"&gt;
 &lt;h2&gt;Experience&lt;/h2&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://docs.getpelican.com/en/3.1.1/"&gt;Pelican&lt;/a&gt; is a nice library for generating websites where you can use &lt;a class="reference external" href="http://docutils.sourceforge.net/rst.html"&gt;reST&lt;/a&gt; to write html pages.
 Primarily, I choose to use pelican because I can use emacs to write reST pages and rst is painless
 to write compared to plain old html. In this post, write my experience of getting this site up and running with pelican.
 Hopefully, it will help someone like me to get started on using pelican.
-Since this is my first few iterations with pelican settings file looks primitive. Please feel free to send along suggestions for improvements.&lt;/p&gt;
+Since this is my first few iterations with pelican settings file looks primitive. Please feel free to send along suggestions for&amp;nbsp;improvements.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class="section" id="install"&gt;
 &lt;h2&gt;Install&lt;/h2&gt;
-&lt;p&gt;Once pip installed straight forward to install 'pelican'.&lt;/p&gt;
+&lt;p&gt;Once pip installed straight forward to install&amp;nbsp;&amp;#8216;pelican&amp;#8217;.&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 $ pip install pelican
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="settings-file"&gt;
-&lt;h2&gt;Settings file&lt;/h2&gt;
+&lt;h2&gt;Settings&amp;nbsp;file&lt;/h2&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
-&lt;span class="n"&gt;AUTHOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Dinesh Weerapurage'&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;AUTHOR&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Dinesh Weerapurage'&lt;/span&gt;
 &lt;span class="n"&gt;AUTHOR_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
-&lt;span class="n"&gt;SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Overheards, thoughts and tech'&lt;/span&gt;
-&lt;span class="n"&gt;SITEURL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://weerapurage.org'&lt;/span&gt;
-&lt;span class="n"&gt;TIMEZONE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'US/Eastern'&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;SITENAME&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Overheards, thoughts and tech'&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;SITEURL&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://weerapurage.org'&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;TIMEZONE&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'&lt;span class="caps"&gt;US&lt;/span&gt;/Eastern'&lt;/span&gt;
 
 &lt;span class="n"&gt;GITHUB_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'https://github.com/xydinesh/xydinesh.github.com'&lt;/span&gt;
 
 &lt;span class="n"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;weerapurageorg&amp;quot;&lt;/span&gt;
 &lt;span class="n"&gt;PDF_GENERATOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
 &lt;span class="n"&gt;REVERSE_CATEGORY_ORDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-&lt;span class="n"&gt;LOCALE&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;C&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;LOCALE&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;C&amp;quot;&lt;/span&gt;
 &lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
 &lt;span class="n"&gt;FEED_ALL_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'feeds/all.rss.xml'&lt;/span&gt;
 &lt;span class="n"&gt;CATEGORY_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'feeds/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;.rss.xml'&lt;/span&gt;
 
-&lt;span class="n"&gt;SOCIAL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://twitter.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;SOCIAL&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://twitter.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
       &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://github.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
 
 &lt;span class="c"&gt;# global metadata to all the contents&lt;/span&gt;
 &lt;span class="n"&gt;DEFAULT_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'yeah'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'it is'&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
 &lt;span class="c"&gt;# Default theme&lt;/span&gt;
-&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'notmyidea'&lt;/span&gt;
+&lt;span class="n"&gt;&lt;span class="caps"&gt;THEME&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'notmyidea'&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="themes"&gt;
 &lt;h2&gt;Themes&lt;/h2&gt;
 &lt;p&gt;There are good number of pelicen &lt;a class="reference external" href="https://github.com/getpelican/pelican-themes"&gt;themes&lt;/a&gt; available on github where you can fork/clone them and use.
-Just need to modify settings file (which I called settings.py)&lt;/p&gt;
+Just need to modify settings file (which I called&amp;nbsp;settings.py)&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 THEME = '../pelican-themes/notmyidea-cms'
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:pelican.html</guid><category>pelican</category><category>python</category><category>rst</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/pelican/</guid><category>pelican</category><category>python</category><category>rst</category></item></channel></rss>

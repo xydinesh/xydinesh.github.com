@@ -34,19 +34,101 @@
 
                             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="./video-embedding.html">Video Embedding</a></h1> 
+                    <h1 class="entry-title"><a href="./posts/2012/Dec/07/install-fabric-on-windows/">Install &#8216;Fabric&#8217; on&nbsp;Windows</a></h1> 
                     <footer class="post-info">
-        <abbr class="published" title="2012-12-06T00:00:00">
-                Thu 06 December 2012
+        <abbr class="published" title="2012-12-07T00:00:00">
+                Fri 07 December 2012
         </abbr>
 
                 <address class="vcard author">
                 By <a class="url fn" href="./author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
         </address>
         <p>In <a href="./category/tech.html">Tech</a>. </p>
-<p>tags: <a href="./tag/python.html">python</a><a href="./tag/rst.html">rst</a></p>
-</footer><!-- /.post-info --><p>Nice, there is a ''.. youtube::'' derective to embed youtube video with rst. In here, <a class="reference external" href="http://countergram.com/youtube-in-rst">youtube</a> directive is discussed in detail.</p>
-<div class="youtube" align="left"><iframe width="420" height="315" src="http://www.youtube.com/embed/2_2lGkEU4Xs" frameborder="0"></iframe></div><p>There are <a href="./video-embedding.html#disqus_thread">comments</a>.</p>                </article>
+<p>tags: <a href="./tag/python.html">python</a><a href="./tag/fabric.html">fabric</a><a href="./tag/windows.html">windows</a><a href="./tag/pip.html">pip</a></p>
+</footer><!-- /.post-info --><div class="section" id="easy">
+<h2>Easy</h2>
+<p>If it works, pretty easy to do with&nbsp;pip</p>
+<pre class="literal-block">
+pip install fabric
+</pre>
+</div>
+<div class="section" id="trouble">
+<h2>Trouble</h2>
+<p>Error while installing fabric on&nbsp;windows</p>
+<pre class="literal-block">
+running build_ext
+building 'Crypto.Random.OSRNG.winrandom' extension
+warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastmath.
+
+error: Unable to find vcvarsall.bat
+
+----------------------------------------
+Command C:\Python27\python.exe -c &quot;import setuptools;__file__='C:\\Users\\Dinesh
+\\Research\\build\\pycrypto\\setup.py';exec(compile(open(__file__).read().replac
+e('\r\n', '\n'), __file__, 'exec'))&quot; install --single-version-externally-managed
+ --record c:\users\dinesh\appdata\local\temp\pip-5bsfzh-record\install-record.tx
+ t failed with error code 1 in C:\Users\Dinesh\Research\build\pycrypto
+ Storing complete log in C:\Users\Dinesh\AppData\Roaming\pip\pip.log
+</pre>
+<p>There is a solution describe on <a class="reference external" href="http://stackoverflow.com/questions/2817869/error-unable-to-find-vcvarsall-bat">StackOverFlow</a> where it suggest to do&nbsp;following</p>
+<pre class="literal-block">
+&gt;SET VS90COMNTOOLS=%VS100COMNTOOLS%
+</pre>
+<p>And&nbsp;then</p>
+<pre class="literal-block">
+$pip install fabric
+</pre>
+<p>It gives following error, Argh&nbsp;!</p>
+<pre class="literal-block">
+build\temp.win32-2.7\Release\src\winrandom.pyd.manifest : general error c1010070
+: Failed to load and parse the manifest. The system cannot find the file specifi
+ed.
+warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastmath.
+
+error: command 'mt.exe' failed with exit status 31
+
+----------------------------------------
+Command C:\Python27\python.exe -c &quot;import setuptools;__file__='C:\\Users\\Dinesh
+\\Research\\build\\pycrypto\\setup.py';exec(compile(open(__file__).read().replac
+e('\r\n', '\n'), __file__, 'exec'))&quot; install --single-version-externally-managed
+ --record c:\users\dinesh\appdata\local\temp\pip-igndoa-record\install-record.tx
+ t failed with error code 1 in C:\Users\Dinesh\Research\build\pycrypto
+ Storing complete log in C:\Users\Dinesh\AppData\Roaming\pip\pip.log
+</pre>
+<p>For the above error also, Found and answer on <a class="reference external" href="http://fuyun.org/2009/12/install-mysql-for-python-on-windows/">fuyun</a> &#8216;s&nbsp;website.</p>
+<p>I will quote his solution&nbsp;here</p>
+<pre class="literal-block">
+Now try to build it again. I got this error:
+
+buildtemp.win32-2.6Release_mysql.pyd.manifest : general error c1010070: Failed to load and parse the manifest. The system cannot find  the file specified.
+error: command ‘mt.exe’ failed with exit status 31
+
+To fix this problem, go to C:Python26Libdistutils, edit msvc9compiler.py, search for ‘MANIFESTFILE’, you will find the following line
+
+ld_args.append(‘/MANIFESTFILE:’ + temp_manifest)
+
+Then append the following line after the above line,
+
+ld_args.append(‘/MANIFEST’)
+</pre>
+<p>then</p>
+<pre class="literal-block">
+$pip install fabric
+
+Creating library build\temp.win32-2.7\Release\src\_counter.lib and object
+build\temp.win32-2.7\Release\src\_counter.exp
+ C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe -nologo -mani
+ fest build\temp.win32-2.7\Release\src\_counter.pyd.manifest -outputresource:buil
+ d\lib.win32-2.7\Crypto\Util\_counter.pyd;2
+ warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastm
+ ath.
+
+ Successfully installed pycrypto
+ Cleaning up...
+</pre>
+<p>Yay ! works like a&nbsp;charm</p>
+</div>
+<p>There are <a href="./posts/2012/Dec/07/install-fabric-on-windows/#disqus_thread">comments</a>.</p>                </article>
                             </aside><!-- /#featured -->
                             <section id="content" class="body">
                     <h1>Other articles</h1>
@@ -57,7 +139,32 @@
                  
                         <li><article class="hentry">    
                 <header>
-                    <h1><a href="./pelican.html" rel="bookmark"
+                    <h1><a href="./posts/2012/Dec/06/video-embedding/" rel="bookmark"
+                           title="Permalink to Video Embedding">Video&nbsp;Embedding</a></h1>
+                </header>
+                
+                <div class="entry-content">
+                <footer class="post-info">
+        <abbr class="published" title="2012-12-06T00:00:00">
+                Thu 06 December 2012
+        </abbr>
+
+                <address class="vcard author">
+                By <a class="url fn" href="./author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
+        </address>
+        <p>In <a href="./category/tech.html">Tech</a>. </p>
+<p>tags: <a href="./tag/python.html">python</a><a href="./tag/rst.html">rst</a></p>
+</footer><!-- /.post-info -->                <p>Nice, there is a &#8221;.. youtube::&#8221; derective to embed youtube video with rst. In here, <a class="reference external" href="http://countergram.com/youtube-in-rst">youtube</a> directive is discussed in&nbsp;detail.</p>
+<div class="youtube" align="left"><iframe width="420" height="315" src="http://www.youtube.com/embed/2_2lGkEU4Xs" frameborder="0"></iframe></div>
+                <a class="readmore" href="./posts/2012/Dec/06/video-embedding/">read more</a>
+                <p>There are <a href="./posts/2012/Dec/06/video-embedding/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+            </article></li>
+                            
+
+                 
+                        <li><article class="hentry">    
+                <header>
+                    <h1><a href="./posts/2012/Dec/05/pelican/" rel="bookmark"
                            title="Permalink to Pelican">Pelican</a></h1>
                 </header>
                 
@@ -77,8 +184,8 @@
 <p><a class="reference external" href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> is a nice library for generating websites where you can use <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reST</a> to write html pages.
 Primarily, I choose to use pelican because I can use emacs to write reST pages and rst is painless
 to write compared to plain old html. In this post, write my experience ...</p></div>
-                <a class="readmore" href="./pelican.html">read more</a>
-                <p>There are <a href="./pelican.html#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
+                <a class="readmore" href="./posts/2012/Dec/05/pelican/">read more</a>
+                <p>There are <a href="./posts/2012/Dec/05/pelican/#disqus_thread">comments</a>.</p>                </div><!-- /.entry-content -->
             </article></li>
                             </ol><!-- /#posts-list -->
                             <p class="paginator">
@@ -94,7 +201,6 @@ to write compared to plain old html. In this post, write my experience ...</p></
                             
                                                     <li><a href="http://twitter.com/xydinesh">twitter</a></li>
                                                     <li><a href="http://github.com/xydinesh">github</a></li>
-                                                    <li><a href="http://www.linkedin.com/in/xydinesh">linkedin</a></li>
                                                 </ul>
                 </div><!-- /.social -->
                 </section><!-- /#extras -->
