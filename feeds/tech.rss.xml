@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Overheard, thoughts and tech</title><link>http://weerapurage.org/</link><description></description><atom:link href="http://weerapurage.org/feeds/Tech.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 07 Dec 2012 00:00:00 -0500</lastBuildDate><item><title>Install ‘Fabric’ on Windows</title><link>http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/</link><description>&lt;div class="section" id="easy"&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Things overheard, thoughts and tech</title><link>http://weerapurage.org/</link><description></description><atom:link href="http://weerapurage.org/feeds/Tech.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 07 Dec 2012 00:00:00 -0500</lastBuildDate><item><title>Install ‘Fabric’ on Windows</title><link>http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/</link><description>&lt;div class="section" id="easy"&gt;
 &lt;h2&gt;Easy&lt;/h2&gt;
 &lt;p&gt;If it works, pretty easy to do with&amp;nbsp;pip&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
