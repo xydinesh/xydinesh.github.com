@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Overheard, thoughts and tech</title><link href="http://weerapurage.org/" rel="alternate"></link><link href="http://weerapurage.org/feeds/Tech.atom.xml" rel="self"></link><id>http://weerapurage.org/</id><updated>2012-12-07T00:00:00-05:00</updated><entry><title>Install ‘Fabric’ on Windows</title><link href="http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/" rel="alternate"></link><updated>2012-12-07T00:00:00-05:00</updated><author><name>Dinesh Weerapurage</name></author><id>tag:weerapurage.org,2012-12-07:posts/2012/Dec/07/install-fabric-on-windows/</id><summary type="html">&lt;div class="section" id="easy"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Things overheard, thoughts and tech</title><link href="http://weerapurage.org/" rel="alternate"></link><link href="http://weerapurage.org/feeds/Tech.atom.xml" rel="self"></link><id>http://weerapurage.org/</id><updated>2013-01-30T00:00:00-05:00</updated><entry><title>Edit Large Files</title><link href="http://weerapurage.org/posts/2013/Jan/30/edit-large-files/" rel="alternate"></link><updated>2013-01-30T00:00:00-05:00</updated><author><name>Dinesh Weerapurage</name></author><id>tag:weerapurage.org,2013-01-30:posts/2013/Jan/30/edit-large-files/</id><summary type="html">&lt;p&gt;Few weeks ago, I split a large file (&lt;span class="caps"&gt;30GB&lt;/span&gt;, text file) into smaller files (&lt;span class="caps"&gt;6GB&lt;/span&gt;) using &lt;tt class="docutils literal"&gt;split&lt;/tt&gt; in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres &lt;tt class="docutils literal"&gt;copy&lt;/tt&gt; didn&amp;#8217;t like it at all. Removing first and last line was not straight forward as I&amp;nbsp;thought.&lt;/p&gt;
+&lt;p&gt;Surprisingly, Nano, Vi and Emacs have failed to handle &lt;span class="caps"&gt;6GB&lt;/span&gt; text file (or I didn&amp;#8217;t have patience to wait for them to finish) and ended up using &lt;tt class="docutils literal"&gt;awk&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;head&lt;/tt&gt;.&lt;/p&gt;
+&lt;div class="section" id="remove-first-n-lines"&gt;
+&lt;h2&gt;Remove First &amp;#8216;n&amp;#8217;&amp;nbsp;lines&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+awk 'NR &amp;gt; n' BigFile.txt &amp;gt; BigFile.txt.tmp
+mv BigFile.txt.tmp BigFile.txt
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remove-last-m-lines"&gt;
+&lt;h2&gt;Remove Last &amp;#8216;m&amp;#8217;&amp;nbsp;lines&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+head -n -m BigFile.txt &amp;gt; BigFile.txt.tmp
+mv BigFile.txt.tmp BigFile.txt
+&lt;/pre&gt;
+&lt;/div&gt;
+</summary><category term="linux"></category><category term="awk"></category><category term="head"></category></entry><entry><title>Install ‘Fabric’ on Windows</title><link href="http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/" rel="alternate"></link><updated>2012-12-07T00:00:00-05:00</updated><author><name>Dinesh Weerapurage</name></author><id>tag:weerapurage.org,2012-12-07:posts/2012/Dec/07/install-fabric-on-windows/</id><summary type="html">&lt;div class="section" id="easy"&gt;
 &lt;h2&gt;Easy&lt;/h2&gt;
 &lt;p&gt;If it works, pretty easy to do with&amp;nbsp;pip&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -93,30 +109,30 @@ $ pip install pelican
 &lt;div class="section" id="settings-file"&gt;
 &lt;h2&gt;Settings&amp;nbsp;file&lt;/h2&gt;
 &lt;pre class="code python literal-block"&gt;
-&lt;span class="c"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
-&lt;span class="n"&gt;&lt;span class="caps"&gt;AUTHOR&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Dinesh Weerapurage'&lt;/span&gt;
-&lt;span class="n"&gt;AUTHOR_SAVE_AS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
-&lt;span class="n"&gt;&lt;span class="caps"&gt;SITENAME&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'Overheards, thoughts and tech'&lt;/span&gt;
-&lt;span class="n"&gt;&lt;span class="caps"&gt;SITEURL&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'http://weerapurage.org'&lt;/span&gt;
-&lt;span class="n"&gt;&lt;span class="caps"&gt;TIMEZONE&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'&lt;span class="caps"&gt;US&lt;/span&gt;/Eastern'&lt;/span&gt;
+&lt;span class="comment"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;AUTHOR&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'Dinesh Weerapurage'&lt;/span&gt;
+&lt;span class="name"&gt;AUTHOR_SAVE_AS&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="name builtin pseudo"&gt;False&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;SITENAME&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'Overheards, thoughts and tech'&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;SITEURL&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'http://weerapurage.org'&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;TIMEZONE&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'&lt;span class="caps"&gt;US&lt;/span&gt;/Eastern'&lt;/span&gt;
 
-&lt;span class="n"&gt;GITHUB_URL&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'https://github.com/xydinesh/xydinesh.github.com'&lt;/span&gt;
+&lt;span class="name"&gt;GITHUB_URL&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'https://github.com/xydinesh/xydinesh.github.com'&lt;/span&gt;
 
-&lt;span class="n"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;weerapurageorg&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;PDF_GENERATOR&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
-&lt;span class="n"&gt;REVERSE_CATEGORY_ORDER&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
-&lt;span class="n"&gt;&lt;span class="caps"&gt;LOCALE&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;C&amp;quot;&lt;/span&gt;
-&lt;span class="n"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;
-&lt;span class="n"&gt;FEED_ALL_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'feeds/all.rss.xml'&lt;/span&gt;
-&lt;span class="n"&gt;CATEGORY_FEED_RSS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'feeds/&lt;/span&gt;&lt;span class="si"&gt;%s&lt;/span&gt;&lt;span class="s"&gt;.rss.xml'&lt;/span&gt;
+&lt;span class="name"&gt;DISQUS_SITENAME&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;&amp;quot;weerapurageorg&amp;quot;&lt;/span&gt;
+&lt;span class="name"&gt;PDF_GENERATOR&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="name builtin pseudo"&gt;False&lt;/span&gt;
+&lt;span class="name"&gt;REVERSE_CATEGORY_ORDER&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="name builtin pseudo"&gt;True&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;LOCALE&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;&amp;quot;C&amp;quot;&lt;/span&gt;
+&lt;span class="name"&gt;DEFAULT_PAGINATION&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal number integer"&gt;4&lt;/span&gt;
+&lt;span class="name"&gt;FEED_ALL_RSS&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'feeds/all.rss.xml'&lt;/span&gt;
+&lt;span class="name"&gt;CATEGORY_FEED_RSS&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'feeds/&lt;/span&gt;&lt;span class="literal string interpol"&gt;%s&lt;/span&gt;&lt;span class="literal string"&gt;.rss.xml'&lt;/span&gt;
 
-&lt;span class="n"&gt;&lt;span class="caps"&gt;SOCIAL&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'twitter'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://twitter.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-      &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;'github'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'http://github.com/xydinesh'&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;SOCIAL&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="punctuation"&gt;((&lt;/span&gt;&lt;span class="literal string"&gt;'twitter'&lt;/span&gt;&lt;span class="punctuation"&gt;,&lt;/span&gt; &lt;span class="literal string"&gt;'http://twitter.com/xydinesh'&lt;/span&gt;&lt;span class="punctuation"&gt;),&lt;/span&gt;
+      &lt;span class="punctuation"&gt;(&lt;/span&gt;&lt;span class="literal string"&gt;'github'&lt;/span&gt;&lt;span class="punctuation"&gt;,&lt;/span&gt; &lt;span class="literal string"&gt;'http://github.com/xydinesh'&lt;/span&gt;&lt;span class="punctuation"&gt;),)&lt;/span&gt;
 
-&lt;span class="c"&gt;# global metadata to all the contents&lt;/span&gt;
-&lt;span class="n"&gt;DEFAULT_METADATA&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s"&gt;'yeah'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;'it is'&lt;/span&gt;&lt;span class="p"&gt;),)&lt;/span&gt;
-&lt;span class="c"&gt;# Default theme&lt;/span&gt;
-&lt;span class="n"&gt;&lt;span class="caps"&gt;THEME&lt;/span&gt;&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s"&gt;'notmyidea'&lt;/span&gt;
+&lt;span class="comment"&gt;# global metadata to all the contents&lt;/span&gt;
+&lt;span class="name"&gt;DEFAULT_METADATA&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="punctuation"&gt;((&lt;/span&gt;&lt;span class="literal string"&gt;'yeah'&lt;/span&gt;&lt;span class="punctuation"&gt;,&lt;/span&gt; &lt;span class="literal string"&gt;'it is'&lt;/span&gt;&lt;span class="punctuation"&gt;),)&lt;/span&gt;
+&lt;span class="comment"&gt;# Default theme&lt;/span&gt;
+&lt;span class="name"&gt;&lt;span class="caps"&gt;THEME&lt;/span&gt;&lt;/span&gt; &lt;span class="operator"&gt;=&lt;/span&gt; &lt;span class="literal string"&gt;'notmyidea'&lt;/span&gt;
 &lt;/pre&gt;
 &lt;/div&gt;
 &lt;div class="section" id="themes"&gt;

@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Overheard, thoughts and tech</title><link>http://weerapurage.org/</link><description></description><atom:link href="http://weerapurage.org/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Fri, 07 Dec 2012 00:00:00 -0500</lastBuildDate><item><title>Install ‘Fabric’ on Windows</title><link>http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/</link><description>&lt;div class="section" id="easy"&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Things overheard, thoughts and tech</title><link>http://weerapurage.org/</link><description></description><atom:link href="http://weerapurage.org/feeds/all.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 30 Jan 2013 00:00:00 -0500</lastBuildDate><item><title>Edit Large Files</title><link>http://weerapurage.org/posts/2013/Jan/30/edit-large-files/</link><description>&lt;p&gt;Few weeks ago, I split a large file (&lt;span class="caps"&gt;30GB&lt;/span&gt;, text file) into smaller files (&lt;span class="caps"&gt;6GB&lt;/span&gt;) using &lt;tt class="docutils literal"&gt;split&lt;/tt&gt; in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres &lt;tt class="docutils literal"&gt;copy&lt;/tt&gt; didn&amp;#8217;t like it at all. Removing first and last line was not straight forward as I&amp;nbsp;thought.&lt;/p&gt;
+&lt;p&gt;Surprisingly, Nano, Vi and Emacs have failed to handle &lt;span class="caps"&gt;6GB&lt;/span&gt; text file (or I didn&amp;#8217;t have patience to wait for them to finish) and ended up using &lt;tt class="docutils literal"&gt;awk&lt;/tt&gt; and &lt;tt class="docutils literal"&gt;head&lt;/tt&gt;.&lt;/p&gt;
+&lt;div class="section" id="remove-first-n-lines"&gt;
+&lt;h2&gt;Remove First &amp;#8216;n&amp;#8217;&amp;nbsp;lines&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+awk 'NR &amp;gt; n' BigFile.txt &amp;gt; BigFile.txt.tmp
+mv BigFile.txt.tmp BigFile.txt
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class="section" id="remove-last-m-lines"&gt;
+&lt;h2&gt;Remove Last &amp;#8216;m&amp;#8217;&amp;nbsp;lines&lt;/h2&gt;
+&lt;pre class="literal-block"&gt;
+head -n -m BigFile.txt &amp;gt; BigFile.txt.tmp
+mv BigFile.txt.tmp BigFile.txt
+&lt;/pre&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 30 Jan 2013 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2013-01-30:posts/2013/Jan/30/edit-large-files/</guid><category>linux</category><category>awk</category><category>head</category></item><item><title>Install ‘Fabric’ on Windows</title><link>http://weerapurage.org/posts/2012/Dec/07/install-fabric-on-windows/</link><description>&lt;div class="section" id="easy"&gt;
 &lt;h2&gt;Easy&lt;/h2&gt;
 &lt;p&gt;If it works, pretty easy to do with&amp;nbsp;pip&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -127,4 +143,10 @@ Just need to modify settings file (which I called&amp;nbsp;settings.py)&lt;/p&gt
 THEME = '../pelican-themes/notmyidea-cms'
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/pelican/</guid><category>pelican</category><category>python</category><category>rst</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/pelican/</guid><category>pelican</category><category>python</category><category>rst</category></item><item><title>Starting with Pelican</title><link>http://weerapurage.org/posts/2012/Dec/05/starting-with-pelican/</link><description>&lt;div class="section" id="introduction"&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hi!&lt;/p&gt;
+&lt;p&gt;This is my first rst&amp;nbsp;post!&lt;/p&gt;
+&lt;p&gt;And this is a link to a &lt;a class="reference external" href="http://weerapurage.org/"&gt;page&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/starting-with-pelican/</guid><category>python</category><category>blog</category><category>rst</category><category>pelican</category></item></channel></rss>
