@@ -143,10 +143,4 @@ Just need to modify settings file (which I called&amp;nbsp;settings.py)&lt;/p&gt
 THEME = '../pelican-themes/notmyidea-cms'
 &lt;/pre&gt;
 &lt;/div&gt;
-</summary><category term="pelican"></category><category term="python"></category><category term="rst"></category></entry><entry><title>Starting with Pelican</title><link href="http://weerapurage.org/posts/2012/Dec/05/starting-with-pelican/" rel="alternate"></link><updated>2012-12-05T00:00:00-05:00</updated><author><name>Dinesh Weerapurage</name></author><id>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/starting-with-pelican/</id><summary type="html">&lt;div class="section" id="introduction"&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Hi!&lt;/p&gt;
-&lt;p&gt;This is my first rst&amp;nbsp;post!&lt;/p&gt;
-&lt;p&gt;And this is a link to a &lt;a class="reference external" href="http://weerapurage.org/"&gt;page&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</summary><category term="python"></category><category term="blog"></category><category term="rst"></category><category term="pelican"></category></entry></feed>
+</summary><category term="pelican"></category><category term="python"></category><category term="rst"></category></entry></feed>

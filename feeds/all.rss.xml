@@ -143,10 +143,4 @@ Just need to modify settings file (which I called&amp;nbsp;settings.py)&lt;/p&gt
 THEME = '../pelican-themes/notmyidea-cms'
 &lt;/pre&gt;
 &lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/pelican/</guid><category>pelican</category><category>python</category><category>rst</category></item><item><title>Starting with Pelican</title><link>http://weerapurage.org/posts/2012/Dec/05/starting-with-pelican/</link><description>&lt;div class="section" id="introduction"&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Hi!&lt;/p&gt;
-&lt;p&gt;This is my first rst&amp;nbsp;post!&lt;/p&gt;
-&lt;p&gt;And this is a link to a &lt;a class="reference external" href="http://weerapurage.org/"&gt;page&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/starting-with-pelican/</guid><category>python</category><category>blog</category><category>rst</category><category>pelican</category></item></channel></rss>
+</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Dinesh Weerapurage</dc:creator><pubDate>Wed, 05 Dec 2012 00:00:00 -0500</pubDate><guid>tag:weerapurage.org,2012-12-05:posts/2012/Dec/05/pelican/</guid><category>pelican</category><category>python</category><category>rst</category></item></channel></rss>
