@@ -10,20 +10,20 @@
 	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
 	
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://weerapurage.org/theme/css/main.css" type="text/css" />
+	<link rel="stylesheet" href="../../../../../theme/css/main.css" type="text/css" />
 		
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	
 			
-	<link href="http://weerapurage.org/" type="application/atom+xml" rel="alternate" title="Things overheard, thoughts and tech ATOM Feed" />
+	<link href="../../../../../" type="application/atom+xml" rel="alternate" title="Things overheard, thoughts and tech ATOM Feed" />
 	</head>
 	
 <body>		
 	<header class="clearfix" role="banner">
 		<div class="wrapper">
-			<h1 class="huge"><a href="http://weerapurage.org">Things overheard, thoughts and tech</a></h1>
+			<h1 class="huge"><a href="../../../../..">Things overheard, thoughts and tech</a></h1>
 		</div>
 	</header>
 	
@@ -49,30 +49,30 @@ $ pip install pelican
 <div class="section" id="settings-file">
 <h2>Settings&nbsp;file</h2>
 <pre class="code python literal-block">
-<span class="c"># -*- coding: utf-8 -*-</span>
-<span class="n"><span class="caps">AUTHOR</span></span> <span class="o">=</span> <span class="s">'Dinesh Weerapurage'</span>
-<span class="n">AUTHOR_SAVE_AS</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n"><span class="caps">SITENAME</span></span> <span class="o">=</span> <span class="s">'Overheards, thoughts and tech'</span>
-<span class="n"><span class="caps">SITEURL</span></span> <span class="o">=</span> <span class="s">'http://weerapurage.org'</span>
-<span class="n"><span class="caps">TIMEZONE</span></span> <span class="o">=</span> <span class="s">'<span class="caps">US</span>/Eastern'</span>
+<span class="comment"># -*- coding: utf-8 -*-</span>
+<span class="name"><span class="caps">AUTHOR</span></span> <span class="operator">=</span> <span class="literal string">'Dinesh Weerapurage'</span>
+<span class="name">AUTHOR_SAVE_AS</span> <span class="operator">=</span> <span class="name builtin pseudo">False</span>
+<span class="name"><span class="caps">SITENAME</span></span> <span class="operator">=</span> <span class="literal string">'Overheards, thoughts and tech'</span>
+<span class="name"><span class="caps">SITEURL</span></span> <span class="operator">=</span> <span class="literal string">'http://weerapurage.org'</span>
+<span class="name"><span class="caps">TIMEZONE</span></span> <span class="operator">=</span> <span class="literal string">'<span class="caps">US</span>/Eastern'</span>
 
-<span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s">'https://github.com/xydinesh/xydinesh.github.com'</span>
+<span class="name">GITHUB_URL</span> <span class="operator">=</span> <span class="literal string">'https://github.com/xydinesh/xydinesh.github.com'</span>
 
-<span class="n">DISQUS_SITENAME</span> <span class="o">=</span> <span class="s">&quot;weerapurageorg&quot;</span>
-<span class="n">PDF_GENERATOR</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">REVERSE_CATEGORY_ORDER</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n"><span class="caps">LOCALE</span></span> <span class="o">=</span> <span class="s">&quot;C&quot;</span>
-<span class="n">DEFAULT_PAGINATION</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">FEED_ALL_RSS</span> <span class="o">=</span> <span class="s">'feeds/all.rss.xml'</span>
-<span class="n">CATEGORY_FEED_RSS</span> <span class="o">=</span> <span class="s">'feeds/</span><span class="si">%s</span><span class="s">.rss.xml'</span>
+<span class="name">DISQUS_SITENAME</span> <span class="operator">=</span> <span class="literal string">&quot;weerapurageorg&quot;</span>
+<span class="name">PDF_GENERATOR</span> <span class="operator">=</span> <span class="name builtin pseudo">False</span>
+<span class="name">REVERSE_CATEGORY_ORDER</span> <span class="operator">=</span> <span class="name builtin pseudo">True</span>
+<span class="name"><span class="caps">LOCALE</span></span> <span class="operator">=</span> <span class="literal string">&quot;C&quot;</span>
+<span class="name">DEFAULT_PAGINATION</span> <span class="operator">=</span> <span class="literal number integer">4</span>
+<span class="name">FEED_ALL_RSS</span> <span class="operator">=</span> <span class="literal string">'feeds/all.rss.xml'</span>
+<span class="name">CATEGORY_FEED_RSS</span> <span class="operator">=</span> <span class="literal string">'feeds/</span><span class="literal string interpol">%s</span><span class="literal string">.rss.xml'</span>
 
-<span class="n"><span class="caps">SOCIAL</span></span> <span class="o">=</span> <span class="p">((</span><span class="s">'twitter'</span><span class="p">,</span> <span class="s">'http://twitter.com/xydinesh'</span><span class="p">),</span>
-      <span class="p">(</span><span class="s">'github'</span><span class="p">,</span> <span class="s">'http://github.com/xydinesh'</span><span class="p">),)</span>
+<span class="name"><span class="caps">SOCIAL</span></span> <span class="operator">=</span> <span class="punctuation">((</span><span class="literal string">'twitter'</span><span class="punctuation">,</span> <span class="literal string">'http://twitter.com/xydinesh'</span><span class="punctuation">),</span>
+      <span class="punctuation">(</span><span class="literal string">'github'</span><span class="punctuation">,</span> <span class="literal string">'http://github.com/xydinesh'</span><span class="punctuation">),)</span>
 
-<span class="c"># global metadata to all the contents</span>
-<span class="n">DEFAULT_METADATA</span> <span class="o">=</span> <span class="p">((</span><span class="s">'yeah'</span><span class="p">,</span> <span class="s">'it is'</span><span class="p">),)</span>
-<span class="c"># Default theme</span>
-<span class="n"><span class="caps">THEME</span></span> <span class="o">=</span> <span class="s">'notmyidea'</span>
+<span class="comment"># global metadata to all the contents</span>
+<span class="name">DEFAULT_METADATA</span> <span class="operator">=</span> <span class="punctuation">((</span><span class="literal string">'yeah'</span><span class="punctuation">,</span> <span class="literal string">'it is'</span><span class="punctuation">),)</span>
+<span class="comment"># Default theme</span>
+<span class="name"><span class="caps">THEME</span></span> <span class="operator">=</span> <span class="literal string">'notmyidea'</span>
 </pre>
 </div>
 <div class="section" id="themes">
@@ -106,10 +106,10 @@ THEME = '../pelican-themes/notmyidea-cms'
 	<div class="meta wrapper">
 	<time datetime="2012-12-05T00:00:00" pubdate>Wed 05 December 2012</time>
 	<ul class="tag clearfix">
-		<li><a href="http://weerapurage.org/category/tech.html">Tech</a></li>
-			<li><a href="http://weerapurage.org/tag/pelican.html">pelican</a></li>
-			<li><a href="http://weerapurage.org/tag/python.html">python</a></li>
-			<li><a href="http://weerapurage.org/tag/rst.html">rst</a></li>
+		<li><a href="../../../../../category/tech.html">Tech</a></li>
+			<li><a href="../../../../../tag/pelican.html">pelican</a></li>
+			<li><a href="../../../../../tag/python.html">python</a></li>
+			<li><a href="../../../../../tag/rst.html">rst</a></li>
 		</ul>
 	</div>	</article>	
 </div>
@@ -118,7 +118,7 @@ THEME = '../pelican-themes/notmyidea-cms'
 <footer class="clearfix">
 	<div class="wrapper pages">
 		<ul class="nav">
-					<li><a href="http://weerapurage.org/archives.html">Archive</a></li>
+					<li><a href="../../../../../archives.html">Archive</a></li>
 		</ul>
 	</div>
 	

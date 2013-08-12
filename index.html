@@ -1,171 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="">	
 <head>
-        <meta charset="utf-8">
-        <title>A Pelican Blog</title>
-        <link rel="stylesheet" href="/theme/css/main.css">
-                <link href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
-                
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+	<meta charset="utf-8"/>
+	<title>Things overheard, thoughts and tech</title>	
+	<meta name="author" content="Dinesh Weerapurage">
+	
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320">
+	<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0">
+	
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700,400|Droid+Sans+Mono' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./theme/css/main.css" type="text/css" />
+		
+	<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+			
+	<link href="./" type="application/atom+xml" rel="alternate" title="Things overheard, thoughts and tech ATOM Feed" />
+	</head>
+	
+<body>		
+	<header class="clearfix" role="banner">
+		<div class="wrapper">
+			<h1 class="huge"><a href=".">Things overheard, thoughts and tech</a></h1>
+		</div>
+	</header>
+	
+	<div role="main" class="content clearfix">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">A Pelican Blog </a></h1>
-                <nav><ul>
-                                                                                    <li ><a href="/category/tech.html">Tech</a></li>
-                                                </ul></nav>
-        </header><!-- /#banner -->
-                
-            
+		<article class="wrapper main">
+		<h1><a href="./posts/2013/Jan/30/edit-large-files/">Edit Large&nbsp;Files</a></h1>
+		<p>Few weeks ago, I split a large file (<span class="caps">30GB</span>, text file) into smaller files (<span class="caps">6GB</span>) using <tt class="docutils literal">split</tt> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <tt class="docutils literal">copy</tt> didn&#8217;t like it at all. Removing first and last ...</p> <a class="btn" href="./posts/2013/Jan/30/edit-large-files/">read more →</a>
+	</article>
 
-                            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="/edit-large-files.html">Edit Large Files</a></h1> 
-                    <footer class="post-info">
-        <abbr class="published" title="2013-01-30T00:00:00">
-                Wed 30 January 2013
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="/author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
-        </address>
-        <p>In <a href="/category/tech.html">Tech</a>. </p>
-<p>tags: <a href="/tag/linux.html">linux</a><a href="/tag/awk.html">awk</a><a href="/tag/head.html">head</a></p>
-</footer><!-- /.post-info --><p>Few weeks ago, I split a large file (30GB, text file) into smaller files (6GB) using <tt class="docutils literal">split</tt> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <tt class="docutils literal">copy</tt> didn't like it at all. Removing first and last line was not straight forward as I thought.</p>
-<p>Surprisingly, Nano, Vi and Emacs have failed to handle 6GB text file (or I didn't have patience to wait for them to finish) and ended up using <tt class="docutils literal">awk</tt> and <tt class="docutils literal">head</tt>.</p>
-<div class="section" id="remove-first-n-lines">
-<h2>Remove First 'n' lines</h2>
-<pre class="literal-block">
-awk 'NR &gt; n' BigFile.txt &gt; BigFile.txt.tmp
-mv BigFile.txt.tmp BigFile.txt
-</pre>
+		<div class="wrapper main">		
+		<h3>More posts</h3>
+		<ol class="archive">
+			
+				<li class="clearfix"><a href="./posts/2012/Dec/07/install-fabric-on-windows/" rel="bookmark" title="Permalink to Install &#8216;Fabric&#8217; on&nbsp;Windows"><time datetime="2012-12-07T00:00:00" pubdate>Fri 07 December 2012</time> Install &#8216;Fabric&#8217; on&nbsp;Windows</a></li>
+		
+				<li class="clearfix"><a href="./posts/2012/Dec/06/video-embedding/" rel="bookmark" title="Permalink to Video&nbsp;Embedding"><time datetime="2012-12-06T00:00:00" pubdate>Thu 06 December 2012</time> Video&nbsp;Embedding</a></li>
+		
+				<li class="clearfix"><a href="./posts/2012/Dec/05/pelican/" rel="bookmark" title="Permalink to Pelican"><time datetime="2012-12-05T00:00:00" pubdate>Wed 05 December 2012</time> Pelican</a></li>
+				</ol>
+		
+		<p>More posts in the <a href="./archives.html">archive</a>.</p>
+	</div>
 </div>
-<div class="section" id="remove-last-m-lines">
-<h2>Remove Last 'm' lines</h2>
-<pre class="literal-block">
-head -n -m BigFile.txt &gt; BigFile.txt.tmp
-mv BigFile.txt.tmp BigFile.txt
-</pre>
-</div>
-                </article>
-                            </aside><!-- /#featured -->
-                            <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-                                                
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="/install-fabric-on-windows.html" rel="bookmark"
-                           title="Permalink to Install 'Fabric' on Windows">Install 'Fabric' on Windows</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-12-07T00:00:00">
-                Fri 07 December 2012
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="/author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
-        </address>
-        <p>In <a href="/category/tech.html">Tech</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a><a href="/tag/fabric.html">fabric</a><a href="/tag/windows.html">windows</a><a href="/tag/pip.html">pip</a><a href="/tag/pycrypto.html">pycrypto</a></p>
-</footer><!-- /.post-info -->                <div class="section" id="easy">
-<h2>Easy</h2>
-<p>If it works, pretty easy to do with pip</p>
-<pre class="literal-block">
-$pip install fabric
-</pre>
-</div>
-<div class="section" id="trouble">
-<h2>Trouble</h2>
-<p>Trouble started when I got an error while installing fabric on
-windows. Error seems to come from building pycrypto library.</p>
-<pre class="literal-block">
-running build_ext
-building 'Crypto.Random.OSRNG.winrandom' extension
-warning: GMP or MPIR library not found; Not ...</pre></div>
-                <a class="readmore" href="/install-fabric-on-windows.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="/video-embedding.html" rel="bookmark"
-                           title="Permalink to Video Embedding">Video Embedding</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-12-06T00:00:00">
-                Thu 06 December 2012
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="/author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
-        </address>
-        <p>In <a href="/category/tech.html">Tech</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a><a href="/tag/rst.html">rst</a></p>
-</footer><!-- /.post-info -->                <p>Nice, there is a ''.. youtube::'' derective to embed youtube video with rst. In here, <a class="reference external" href="http://countergram.com/youtube-in-rst">youtube</a> directive is discussed in detail.</p>
-<div class="youtube" align="left"><iframe width="420" height="315" src="http://www.youtube.com/embed/2_2lGkEU4Xs" frameborder="0"></iframe></div>
-                <a class="readmore" href="/video-embedding.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
-                            
-
-                 
-                        <li><article class="hentry">    
-                <header>
-                    <h1><a href="/pelican.html" rel="bookmark"
-                           title="Permalink to Pelican">Pelican</a></h1>
-                </header>
-                
-                <div class="entry-content">
-                <footer class="post-info">
-        <abbr class="published" title="2012-12-05T00:00:00">
-                Wed 05 December 2012
-        </abbr>
-
-                <address class="vcard author">
-                By <a class="url fn" href="/author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
-        </address>
-        <p>In <a href="/category/tech.html">Tech</a>. </p>
-<p>tags: <a href="/tag/pelican.html">pelican</a><a href="/tag/python.html">python</a><a href="/tag/rst.html">rst</a></p>
-</footer><!-- /.post-info -->                <div class="section" id="experience">
-<h2>Experience</h2>
-<p><a class="reference external" href="http://docs.getpelican.com/en/3.1.1/">Pelican</a> is a nice library for generating websites where you can use <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reST</a> to write html pages.
-Primarily, I choose to use pelican because I can use emacs to write reST pages and rst is painless
-to write compared to plain old html. In this post, write my experience ...</p></div>
-                <a class="readmore" href="/pelican.html">read more</a>
-                                </div><!-- /.entry-content -->
-            </article></li>
-                            </ol><!-- /#posts-list -->
-                                                    </section><!-- /#content -->
-                    <section id="extras" class="body">
-                                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="/feeds\all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-                            
-                                                </ul>
-                </div><!-- /.social -->
-                </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+	
+		
+<footer class="clearfix">
+	<div class="wrapper pages">
+		<ul class="nav">
+					<li><a href="./archives.html">Archive</a></li>
+		</ul>
+	</div>
+	
+	<div class="copy wrapper">
+		<ul class="social">
+						<li><a href="http://twitter.com/xydinesh">twitter</a></li>
+						<li><a href="http://github.com/xydinesh">github</a></li>
+						<li><a href="http://linkedin.com/in/xydinesh">linkedin</a></li>
+					</ul>
+	
+		<p role="contentinfo">© 2012 Dinesh Weerapurage<br>
+		Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">Pelican</a>.</p>
+	</div>
+</footer>
+	
+	<script>
+	  var _gaq=[['_setAccount','UA-36322039-1'],['_trackPageview']];
+	  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	  s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
 </body>
 </html>
