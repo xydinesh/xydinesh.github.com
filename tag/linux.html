@@ -3,10 +3,10 @@
 <head>
         <title>Things overheard, thoughts and tech - linux</title>
         <meta charset="utf-8" />
-                <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
-        <link href="../" type="application/atom+xml" rel="alternate" title="Things overheard, thoughts and tech ATOM Feed" />
+        <link rel="stylesheet" href="../theme/css/main.css" type="text/css" />
+                <link href="http://weerapurage.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Things overheard, thoughts and tech Atom Feed" />
+                        <link href="http://weerapurage.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate" title="Things overheard, thoughts and tech RSS Feed" />
         
-
         <!--[if IE]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
@@ -24,16 +24,18 @@
 <img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" />
 </a>
         <header id="banner" class="body">
-                <h1><a href="..">Things overheard, thoughts and tech </a></h1>
+                <h1><a href="../">Things overheard, thoughts and tech </a></h1>
                 <nav><ul>
-                                                                                        <li ><a href="../category/tech.html">Tech</a></li>
-                                                </ul></nav>
+                                                                                                    <li ><a href="../category/tech.html">Tech</a></li>
+                                </ul></nav>
         </header><!-- /#banner -->
                 
-        
-            <aside id="featured" class="body"><article>
-                <h1 class="entry-title"><a href="../posts/2013/Jan/30/edit-large-files/">Edit Large&nbsp;Files</a></h1> 
-                <footer class="post-info">
+            
+
+                            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="../posts/2013/Jan/30/edit-large-files/">Edit Large&nbsp;Files</a></h1> 
+                    <footer class="post-info">
         <abbr class="published" title="2013-01-30T00:00:00">
                 Wed 30 January 2013
         </abbr>
@@ -42,8 +44,8 @@
                 By <a class="url fn" href="../author/dinesh-weerapurage.html">Dinesh Weerapurage</a>
         </address>
         <p>In <a href="../category/tech.html">Tech</a>. </p>
-<p>tags: <a href="../tag/linux.html">linux</a><a href="../tag/awk.html">awk</a><a href="../tag/head.html">head</a></p></p>
-</footer><!-- /.post-info -->                <p>Few weeks ago, I split a large file (<span class="caps">30GB</span>, text file) into smaller files (<span class="caps">6GB</span>) using <tt class="docutils literal">split</tt> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <tt class="docutils literal">copy</tt> didn&#8217;t like it at all. Removing first and last line was not straight forward as I&nbsp;thought.</p>
+<p>tags: <a href="../tag/linux.html">linux</a><a href="../tag/awk.html">awk</a><a href="../tag/head.html">head</a></p>
+</footer><!-- /.post-info --><p>Few weeks ago, I split a large file (<span class="caps">30GB</span>, text file) into smaller files (<span class="caps">6GB</span>) using <tt class="docutils literal">split</tt> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <tt class="docutils literal">copy</tt> didn&#8217;t like it at all. Removing first and last line was not straight forward as I&nbsp;thought.</p>
 <p>Surprisingly, Nano, Vi and Emacs have failed to handle <span class="caps">6GB</span> text file (or I didn&#8217;t have patience to wait for them to finish) and ended up using <tt class="docutils literal">awk</tt> and <tt class="docutils literal">head</tt>.</p>
 <div class="section" id="remove-first-n-lines">
 <h2>Remove First &#8216;n&#8217;&nbsp;lines</h2>
@@ -59,16 +61,19 @@ head -n -m BigFile.txt &gt; BigFile.txt.tmp
 mv BigFile.txt.tmp BigFile.txt
 </pre>
 </div>
-
-                <p>There are <a href="../posts/2013/Jan/30/edit-large-files/#disqus_thread">comments</a>.</p>                </article>
-                </aside><!-- /#featured -->
-            </ol><!-- /#posts-list -->
-</section><!-- /#content -->
-        <section id="extras" class="body">
+<p>There are <a href="../posts/2013/Jan/30/edit-large-files/#disqus_thread">comments</a>.</p>                </article>
+                                    <p class="paginator">
+        Page 1 / 1
+    </p>
+                            </aside><!-- /#featured -->
+                                                </ol><!-- /#posts-list -->
+                        </section><!-- /#content -->
+                    <section id="extras" class="body">
                                 <div class="social">
                         <h2>social</h2>
                         <ul>
-                            <li><a href="../" rel="alternate">atom feed</a></li>
+                            <li><a href="http://weerapurage.org/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                                                        <li><a href="http://weerapurage.org/feeds/all.rss.xml" type="application/rss+xml" rel="alternate">rss feed</a></li>
                             
                                                     <li><a href="http://twitter.com/xydinesh">twitter</a></li>
                                                     <li><a href="http://github.com/xydinesh">github</a></li>
@@ -79,21 +84,22 @@ mv BigFile.txt.tmp BigFile.txt
 
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
-                Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>.
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
 
-                <p>The theme is by <a href="http://smashingmagazine.com">Smashing Magazine</a>, thanks!</p>
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
         </footer><!-- /#contentinfo -->
 
     <script type="text/javascript">
-    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-36322039-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
     </script>
-    <script type="text/javascript">
-    try {
-        var pageTracker = _gat._getTracker("UA-36322039-1");
-    pageTracker._trackPageview();
-    } catch(err) {}</script>
 <script type="text/javascript">
     var disqus_shortname = 'weerapurageorg';
     (function () {
