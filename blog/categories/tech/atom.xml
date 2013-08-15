@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tech | Dw]]></title>
+  <link href="http://xydinesh.github.io/blog/categories/tech/atom.xml" rel="self"/>
+  <link href="http://xydinesh.github.io/"/>
+  <updated>2013-08-15T22:12:05+00:00</updated>
+  <id>http://xydinesh.github.io/</id>
+  <author>
+    <name><![CDATA[Dinesh Weerapurage]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Edit Large Files]]></title>
+    <link href="http://xydinesh.github.io/blog/2013/01/30/edit-large-files/"/>
+    <updated>2013-01-30T02:30:00+00:00</updated>
+    <id>http://xydinesh.github.io/blog/2013/01/30/edit-large-files</id>
+    <content type="html"><![CDATA[<p>Few weeks ago, I split a large file (30GB, text file) into smaller files (6GB) using <code>split</code> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <code>copy</code> didn&rsquo;t like it at all. Removing first and last line was not straight forward as I thought.</p>
+
+<p>Surprisingly, Nano, Vi and Emacs have failed to handle 6GB text file (or I didn&rsquo;t have patience to wait for them to finish) and ended up using <code>awk</code> and <code>head</code>.</p>
+
+<h2>Remove First &lsquo;n&rsquo; lines</h2>
+
+<pre><code>awk 'NR &gt; n' BigFile.txt &gt; BigFile.txt.tmp
+mv BigFile.txt.tmp BigFile.txt
+</code></pre>
+
+<h2>Remove Last &rsquo;m' lines</h2>
+
+<pre><code>head -n -m BigFile.txt &gt; BigFile.txt.tmp
+mv BigFile.txt.tmp BigFile.txt
+</code></pre>
+]]></content>
+  </entry>
+  
+</feed>
