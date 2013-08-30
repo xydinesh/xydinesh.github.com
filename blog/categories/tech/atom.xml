@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tech | Dw]]></title>
   <link href="http://xydinesh.github.io/blog/categories/tech/atom.xml" rel="self"/>
   <link href="http://xydinesh.github.io/"/>
-  <updated>2013-08-15T22:41:30+00:00</updated>
+  <updated>2013-08-30T14:37:39+00:00</updated>
   <id>http://xydinesh.github.io/</id>
   <author>
     <name><![CDATA[Dinesh Weerapurage]]></name>
@@ -12,6 +12,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Increase the maximum open file count in linux]]></title>
+    <link href="http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux/"/>
+    <updated>2013-08-30T14:27:00+00:00</updated>
+    <id>http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux</id>
+    <content type="html"><![CDATA[<p>As root edit /etc/security/limits.conf</p>
+
+<p>```</p>
+
+<h1>emacs /etc/security/limits.conf</h1>
+
+<p>```</p>
+
+<p>and add folowing</p>
+
+<p><code>
+&lt;username&gt; soft nofile &lt;no of files&gt;
+&lt;username&gt; hard nofile &lt;no of files&gt;
+</code></p>
+
+<p>As an example:</p>
+
+<p><code>
+dinesh soft nofile 10240
+dinesh hard nofile 10240
+</code></p>
+
+<p>Then logout from the session and log back in to check the maximum open file limits.</p>
+
+<p><code>
+$ ulimit -Hn
+$ ulimit -Sn
+</code></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Edit Large Files]]></title>

@@ -5,11 +5,15 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Edit Large Files - Dw</title>
+  <title>Increase the maximum open file count in linux - Dw</title>
   <meta name="author" content="Dinesh Weerapurage">
 
   
-  <meta name="description" content="Few weeks ago, I split a large file (30GB, text file) into smaller files (6GB) using split in order to load in to postgres. However, smaller files &hellip;">
+  <meta name="description" content="As root edit /etc/security/limits.conf 1
+# emacs /etc/security/limits.conf and add folowing 1
+2
+&lt;username&gt; soft nofile &lt;no of files&gt;
+&lt; &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +22,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://xydinesh.github.io/blog/2013/01/30/edit-large-files">
+  <link rel="canonical" href="http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Dw" type="application/atom+xml">
@@ -78,7 +82,7 @@
   
   <header>
     
-      <h1 class="entry-title">Edit Large Files</h1>
+      <h1 class="entry-title">Increase the Maximum Open File Count in Linux</h1>
     
     
       <p class="meta">
@@ -94,7 +98,7 @@
   
 
 
-<time datetime="2013-01-30T02:30:00+00:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
+<time datetime="2013-08-30T14:27:00+00:00" pubdate data-updated="true">Aug 30<span>th</span>, 2013</time>
         
          | <a href="#disqus_thread">Comments</a>
         
@@ -103,21 +107,37 @@
   </header>
 
 
-<div class="entry-content"><p>Few weeks ago, I split a large file (30GB, text file) into smaller files (6GB) using <code>split</code> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <code>copy</code> didn&rsquo;t like it at all. Removing first and last line was not straight forward as I thought.</p>
+<div class="entry-content"><p>As root edit /etc/security/limits.conf</p>
 
-<p>Surprisingly, Nano, Vi and Emacs have failed to handle 6GB text file (or I didn&rsquo;t have patience to wait for them to finish) and ended up using <code>awk</code> and <code>head</code>.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># emacs /etc/security/limits.conf</span></code></pre></td></tr></table></div></figure>
 
-<h2>Remove First &lsquo;n&rsquo; lines</h2>
 
-<pre><code>awk 'NR &gt; n' BigFile.txt &gt; BigFile.txt.tmp
-mv BigFile.txt.tmp BigFile.txt
-</code></pre>
+<p>and add folowing</p>
 
-<h2>Remove Last &rsquo;m&#8217; lines</h2>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;username&gt; soft nofile &lt;no of files&gt;
+</span><span class='line'>&lt;username&gt; hard nofile &lt;no of files&gt;</span></code></pre></td></tr></table></div></figure>
 
-<pre><code>head -n -m BigFile.txt &gt; BigFile.txt.tmp
-mv BigFile.txt.tmp BigFile.txt
-</code></pre>
+
+<p>As an example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>dinesh soft nofile 10240
+</span><span class='line'>dinesh hard nofile 10240</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then logout from the session and log back in to check the maximum open file limits.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ulimit -Hn
+</span><span class='line'>$ ulimit -Sn</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
 
 
@@ -140,7 +160,7 @@ mv BigFile.txt.tmp BigFile.txt
   
 
 
-<time datetime="2013-01-30T02:30:00+00:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
+<time datetime="2013-08-30T14:27:00+00:00" pubdate data-updated="true">Aug 30<span>th</span>, 2013</time>
       
 
 <span class="categories">
@@ -154,7 +174,7 @@ mv BigFile.txt.tmp BigFile.txt
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://xydinesh.github.io/blog/2013/01/30/edit-large-files/" data-via="xydinesh" data-counturl="http://xydinesh.github.io/blog/2013/01/30/edit-large-files/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux/" data-via="xydinesh" data-counturl="http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux/" >Tweet</a>
   
   
   
@@ -165,10 +185,8 @@ mv BigFile.txt.tmp BigFile.txt
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/12/07/install-fabric-on-windows/" title="Previous Post: Install 'Fabric' on Windows">&laquo; Install 'Fabric' on Windows</a>
+        <a class="basic-alignment left" href="/blog/2013/01/30/edit-large-files/" title="Previous Post: Edit Large Files">&laquo; Edit Large Files</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/08/30/increase-maximum-open-file-count-in-linux/" title="Next Post: Increase the maximum open file count in linux">Increase the maximum open file count in linux &raquo;</a>
       
     </p>
   </footer>
@@ -255,8 +273,8 @@ mv BigFile.txt.tmp BigFile.txt
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://xydinesh.github.io/blog/2013/01/30/edit-large-files/';
-        var disqus_url = 'http://xydinesh.github.io/blog/2013/01/30/edit-large-files/';
+        var disqus_identifier = 'http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux/';
+        var disqus_url = 'http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux/';
         var disqus_script = 'embed.js';
       
     (function () {

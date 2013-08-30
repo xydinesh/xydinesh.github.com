@@ -4,7 +4,7 @@
   <title><![CDATA[Dw]]></title>
   <link href="http://xydinesh.github.io/atom.xml" rel="self"/>
   <link href="http://xydinesh.github.io/"/>
-  <updated>2013-08-15T22:41:30+00:00</updated>
+  <updated>2013-08-30T14:37:39+00:00</updated>
   <id>http://xydinesh.github.io/</id>
   <author>
     <name><![CDATA[Dinesh Weerapurage]]></name>
@@ -12,6 +12,45 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Increase the maximum open file count in linux]]></title>
+    <link href="http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux/"/>
+    <updated>2013-08-30T14:27:00+00:00</updated>
+    <id>http://xydinesh.github.io/blog/2013/08/30/increase-maximum-open-file-count-in-linux</id>
+    <content type="html"><![CDATA[<p>As root edit /etc/security/limits.conf</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># emacs /etc/security/limits.conf</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and add folowing</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;username&gt; soft nofile &lt;no of files&gt;
+</span><span class='line'>&lt;username&gt; hard nofile &lt;no of files&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As an example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>dinesh soft nofile 10240
+</span><span class='line'>dinesh hard nofile 10240</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then logout from the session and log back in to check the maximum open file limits.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ulimit -Hn
+</span><span class='line'>$ ulimit -Sn</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Edit Large Files]]></title>
