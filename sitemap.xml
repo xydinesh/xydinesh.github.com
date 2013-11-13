@@ -15,8 +15,14 @@
         <lastmod>2013-08-30T14:37:18+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/
+        </loc>
+        <lastmod>2013-11-13T20:10:03+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://xydinesh.github.io/</loc>
-        <lastmod>2013-08-30T14:37:18+00:00</lastmod>
+        <lastmod>2013-11-13T20:10:03+00:00</lastmod>
     </url>
     <url>
         <loc>http://xydinesh.github.io/robots.txt</loc>
@@ -24,6 +30,6 @@
     </url>
     <url>
         <loc>http://xydinesh.github.io/blog/archives/</loc>
-        <lastmod>2013-08-30T14:37:18+00:00</lastmod>
+        <lastmod>2013-11-13T20:10:03+00:00</lastmod>
     </url>
 </urlset>

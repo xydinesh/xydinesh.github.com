@@ -4,7 +4,7 @@
   <title><![CDATA[Dw]]></title>
   <link href="http://xydinesh.github.io/atom.xml" rel="self"/>
   <link href="http://xydinesh.github.io/"/>
-  <updated>2013-08-30T14:37:39+00:00</updated>
+  <updated>2013-11-13T20:10:37+00:00</updated>
   <id>http://xydinesh.github.io/</id>
   <author>
     <name><![CDATA[Dinesh Weerapurage]]></name>
@@ -12,6 +12,291 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Compile wxPython 2.9.5.0 in linux]]></title>
+    <link href="http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/"/>
+    <updated>2013-11-12T21:05:00+00:00</updated>
+    <id>http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux</id>
+    <content type="html"><![CDATA[<h2>Introduction</h2>
+
+<p>If you came across this post there is a good chance that you know what is wxPython. <a href="http://www.wxpython.org/what.php">wxPython</a> is a GUI toolkit for Python <a href="http://www.wxpython.org/what.php">1</a>. Even though using windows binary is straight forward, compiling on linux requires additional steps which is not available in the documentation. This post hopes to address/document additional steps needed on linux. In addition, this post includes steps only required for my project, feel free to modify/add further steps to match yours.</p>
+
+<h3>Setup</h3>
+
+<p>I&rsquo;m using a fresh Ubuntu 13.10 virtual machine from <a href="http://www.windowsazure.com/en-us/">Micorsoft Azure</a>. First install compilers and text editors and other utilities you may need.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$sudo apt-get install gcc g++ screen emacs24-nox</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then download wxPython 2.5.9 (development) and start compilation</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$wget http://downloads.sourceforge.net/wxpython/wxPython-src-2.9.5.0.tar.bz2
+</span><span class='line'>$tar xvfj wxPython-src-2.9.5.0.tar.bz2
+</span><span class='line'>$cd wxPython-src-2.9.5.0/wxPython
+</span><span class='line'>$python2.7 build-wxpython.py --build_dir=../bld</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now, if you are like me, start with a fresh VM, you will see bunch of errors thrown by wxPython compilation. Lets fix them one at a time as they occur. After each fix you need to re-compile the source.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$cd wxPython-src-2.9.5.0/wxPython
+</span><span class='line'>$python2.7 build-wxpython.py --build_dir=../bld</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><h4>GTK error</h4></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>checking for GTK+ - version &gt;= 2.6.0... no
+</span><span class='line'>*** Could not run GTK+ test program, checking why...
+</span><span class='line'>*** The test program failed to compile or link. See the file config.log for the
+</span><span class='line'>*** exact error that occurred. This usually means GTK+ is incorrectly installed.
+</span><span class='line'>checking for pkg-config... (cached) /usr/bin/pkg-config
+</span><span class='line'>checking for GTK+ - version &gt;= 3.0.0... no
+</span><span class='line'>
+</span><span class='line'>checking for GTK - version &gt;= 1.2.3... no
+</span><span class='line'>*** The gtk-config script installed by GTK could not be found
+</span><span class='line'>*** If GTK was installed in PREFIX, make sure PREFIX/bin is in
+</span><span class='line'>*** your path, or set the GTK_CONFIG environment variable to the
+</span><span class='line'>*** full path to gtk-config.
+</span><span class='line'>configure: error:
+</span><span class='line'>The development files for GTK+ were not found. For GTK+ 2, please
+</span><span class='line'>ensure that pkg-config is in the path and that gtk+-2.0.pc is
+</span><span class='line'>installed. For GTK+ 1.2 please check that gtk-config is in the path,
+</span><span class='line'>and that the version is 1.2.3 or above. Also check that the
+</span><span class='line'>libraries returned by 'pkg-config gtk+-2.0 --libs' or 'gtk-config
+</span><span class='line'>--libs' are in the LD_LIBRARY_PATH or equivalent.</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Solution:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>yum install gtk2 gtk2-devel</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><h4>OpenGL error</h4></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>checking elsewhere... no
+</span><span class='line'>checking for SM... checking for SmcOpenConnection in -lSM... no
+</span><span class='line'>checking elsewhere... no
+</span><span class='line'>configure: WARNING: libSM not found; disabling session management detection
+</span><span class='line'>checking for OpenGL headers... not found
+</span><span class='line'>checking for GL/gl.h... no
+</span><span class='line'>configure: error: OpenGL libraries not available
+</span><span class='line'>Error running configure
+</span><span class='line'>ERROR: failed building wxWidgets
+</span><span class='line'>Traceback (most recent call last):
+</span><span class='line'>  File "build-wxpython.py", line 378, in &lt;module&gt;
+</span><span class='line'>      wxbuild.main(wxscript, build_options)
+</span><span class='line'>      File "/home/dinesh/wxPython-src-2.9.5.0/build/tools/build-wxwidgets.py", line 365, in main
+</span><span class='line'>          "Error running configure")
+</span><span class='line'>      File "/home/dinesh/wxPython-src-2.9.5.0/build/tools/build-wxwidgets.py", line 80, in exitIfError
+</span><span class='line'>           raise builder.BuildError(msg)
+</span><span class='line'>      BuildError</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Solution:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>from build/tools/build-wxwidgest.py comment --with-opengl</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><h4>Python.h error</h4></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>building '_core_' extension
+</span><span class='line'>gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -DSWIG_TYPE_TABLE=_wxPython_table -DSWIG_PYTHON_OUTPUT_TUPLE -DWXP_USE_THREAD=1 -UNDEBUG -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -Iinclude -Isrc -I/home/dinesh/wxPython-src-2.9.5.0/bld/lib/wx/include/gtk2-unicode-2.9 -I/home/dinesh/wxPython-src-2.9.5.0/include -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/python2.6 -c src/helpers.cpp -o build/temp.linux-x86_64-2.6/src/helpers.o -pthread -O3
+</span><span class='line'>src/helpers.cpp:15:20: error: Python.h: No such file or directory
+</span><span class='line'>src/helpers.cpp:53:2: error: #error Python must support Unicode to use wxWindows Unicode
+</span><span class='line'>In file included from src/helpers.cpp:17:</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Solution:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install python-dev</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><h4>_html2 error</h4></li>
+</ul>
+
+
+<p>This error needs a bit of work from our side. There are patches (see below) provided in <a href="http://goo.gl/gIQYpA">wxPython google group</a> . First, we have to apply those patches before moving forward.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>--- wxPython-src-2.9.5.0/wxPython/src/gtk/html2_wrap.cpp        2013-05-18 12:47:49.000000000 -0600
+</span><span class='line'>+++ wxPython-src-2.9.5.0-patch/wxPython/src/gtk/html2_wrap.cpp  2013-09-11 11:13:06.179333082 -0600
+</span><span class='line'>@@ -2683,7 +2683,7 @@
+</span><span class='line'> #include &lt;wx/sharedptr.h&gt;
+</span><span class='line'>  #include &lt;wx/vector.h&gt;
+</span><span class='line'>
+</span><span class='line'>-
+</span><span class='line'>+class wxWebView;
+</span><span class='line'>
+</span><span class='line'> enum wxWebViewZoom
+</span><span class='line'>  {
+</span><span class='line'>  @@ -2784,12 +2784,12 @@
+</span><span class='line'>   class wxWebView : public wxControl
+</span><span class='line'>    {
+</span><span class='line'>   public:
+</span><span class='line'>   -    virtual bool Create(wxWindow*, wxWindowID, const wxString&, const wxPoint&,
+</span><span class='line'>   -                        const wxSize&, long style, const wxString&) { _RaiseError(); return false; }
+</span><span class='line'>   -    static wxWebView* New(wxWebViewBackend) { _RaiseError(); return NULL; }
+</span><span class='line'>   -    static wxWebView* New(wxWindow*, wxWindowID, const wxString&, const wxPoint& ,
+</span><span class='line'>   -                          const wxSize& , const wxString&, long style,
+</span><span class='line'>   -                          const wxString&) { _RaiseError(); return NULL; }
+</span><span class='line'>   +    virtual bool Create(wxWindow* parent, wxWindowID id, const wxString& url, const wxPoint& pos,
+</span><span class='line'>   +                        const wxSize& size, long style, const wxString& name) { _RaiseError(); return false; }
+</span><span class='line'>   +    static wxWebView* New(const wxString& backend) { _RaiseError(); return NULL; }
+</span><span class='line'>   +    static wxWebView* New(wxWindow* parent, wxWindowID id, const wxString& url, const wxPoint& pos,
+</span><span class='line'>   +                          const wxSize&  size, const wxString& backend, long style,
+</span><span class='line'>   +                          const wxString& name) { _RaiseError(); return NULL; }
+</span><span class='line'>
+</span><span class='line'>     virtual wxString GetCurrentTitle() const { return wxEmptyString; }
+</span><span class='line'>     virtual wxString GetCurrentURL() const { return wxEmptyString; }</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>--- wxPython-src-2.9.5.0/wxPython/setup.py      2013-02-27 13:14:01.000000000 -0700
+</span><span class='line'>+++ wxPython-src-2.9.5.0-patch/wxPython/setup.py        2013-09-11 09:54:08.882270829 -0600
+</span><span class='line'>@@ -946,6 +946,7 @@
+</span><span class='line'> DATA_FILES += find_data_files('wx/tools/Editra/tests/syntax', '*')
+</span><span class='line'>  DATA_FILES += find_data_files('wx/tools/Editra', '[A-Z]*', recursive=False)
+</span><span class='line'>
+</span><span class='line'>+DATA_FILES += ["src/wx.pth"]
+</span><span class='line'>
+</span><span class='line'> ## import pprint
+</span><span class='line'> ## pprint.pprint(DATA_FILES)</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li><h4>_glcanvas error</h4></li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>building '_glcanvas' extension
+</span><span class='line'>gcc -pthread -fno-strict-aliasing -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -DNDEBUG -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -D_GNU_SOURCE -fPIC -fwrapv -fPIC -DSWIG_TYPE_TABLE=_wxPython_table -DSWIG_PYTHON_OUTPUT_TUPLE -DWXP_USE_THREAD=1 -UNDEBUG -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -Iinclude -Isrc -I/home/dinesh/wxPython-src-2.9.5.0/bld/lib/wx/include/gtk2-unicode-2.9 -I/home/dinesh/wxPython-src-2.9.5.0/include -I/usr/include/gtk-2.0 -I/usr/lib64/gtk-2.0/include -I/usr/include/atk-1.0 -I/usr/include/cairo -I/usr/include/pango-1.0 -I/usr/include/glib-2.0 -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1 -I/usr/include/freetype2 -I/usr/include/libpng12 -I/usr/include/python2.6 -c src/gtk/glcanvas_wrap.cpp -o build/temp.linux-x86_64-2.6/src/gtk/glcanvas_wrap.o -pthread -O3</span></code></pre></td></tr></table></div></figure>
+
+
+<h5>Solution:</h5>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>disable building canvas
+</span><span class='line'>in wxPython/config.py set BUILD_GLCANVAS = 0</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Those are all errors, I encounter during wxPython compilation. Upon successfull compilation,
+build finishes and wxPython is ready to use after setting following environment variables.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>To run the wxPython demo you may need to:
+</span><span class='line'> - set your PYTHONPATH variable to /home/dinesh/wxPython-src-2.9.5.0/wxPython
+</span><span class='line'> - set your LD_LIBRARY_PATH to /home/dinesh/wxPython-src-2.9.5.0/bld/lib</span></code></pre></td></tr></table></div></figure>
+
+
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Increase the maximum open file count in linux]]></title>

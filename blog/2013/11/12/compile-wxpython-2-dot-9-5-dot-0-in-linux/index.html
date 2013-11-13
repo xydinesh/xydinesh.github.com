@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Dw</title>
+  <title>Compile wxPython 2.9.5.0 in linux - Dw</title>
   <meta name="author" content="Dinesh Weerapurage">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://xydinesh.github.io">
+  <link rel="canonical" href="http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Dw" type="application/atom+xml">
@@ -73,15 +73,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/">Compile wxPython 2.9.5.0 in Linux</a></h1>
+      <h1 class="entry-title">Compile wxPython 2.9.5.0 in Linux</h1>
     
     
       <p class="meta">
@@ -99,14 +96,14 @@
 
 <time datetime="2013-11-12T21:05:00+00:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
         
-         | <a href="/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><h2>Introduction</h2>
+<div class="entry-content"><h2>Introduction</h2>
 
 <p>If you came across this post there is a good chance that you know what is wxPython. <a href="http://www.wxpython.org/what.php">wxPython</a> is a GUI toolkit for Python <a href="http://www.wxpython.org/what.php">1</a>. Even though using windows binary is straight forward, compiling on linux requires additional steps which is not available in the documentation. This post hopes to address/document additional steps needed on linux. In addition, this post includes steps only required for my project, feel free to modify/add further steps to match yours.</p>
 
@@ -384,90 +381,16 @@ build finishes and wxPython is ready to use after setting following environment 
 
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/08/30/increase-maximum-open-file-count-in-linux/">Increase the Maximum Open File Count in Linux</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Dinesh Weerapurage</span></span>
 
-<time datetime="2013-08-30T14:27:00+00:00" pubdate data-updated="true">Aug 30<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/08/30/increase-maximum-open-file-count-in-linux/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>As root edit /etc/security/limits.conf</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># emacs /etc/security/limits.conf</span></code></pre></td></tr></table></div></figure>
-
-
-<p>and add folowing</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;username&gt; soft nofile &lt;no of files&gt;
-</span><span class='line'>&lt;username&gt; hard nofile &lt;no of files&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>As an example:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>dinesh soft nofile 10240
-</span><span class='line'>dinesh hard nofile 10240</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Then logout from the session and log back in to check the maximum open file limits.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ulimit -Hn
-</span><span class='line'>$ ulimit -Sn</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/30/edit-large-files/">Edit Large Files</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -479,202 +402,46 @@ build finishes and wxPython is ready to use after setting following environment 
   
 
 
-<time datetime="2013-01-30T02:30:00+00:00" pubdate data-updated="true">Jan 30<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/30/edit-large-files/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Few weeks ago, I split a large file (30GB, text file) into smaller files (6GB) using <code>split</code> in order to load in to postgres. However, smaller files had partial lines at the beginning and at the end and postgres <code>copy</code> didn&rsquo;t like it at all. Removing first and last line was not straight forward as I thought.</p>
-
-<p>Surprisingly, Nano, Vi and Emacs have failed to handle 6GB text file (or I didn&rsquo;t have patience to wait for them to finish) and ended up using <code>awk</code> and <code>head</code>.</p>
-
-<h2>Remove First &lsquo;n&rsquo; lines</h2>
-
-<pre><code>awk 'NR &gt; n' BigFile.txt &gt; BigFile.txt.tmp
-mv BigFile.txt.tmp BigFile.txt
-</code></pre>
-
-<h2>Remove Last &rsquo;m&#8217; lines</h2>
-
-<pre><code>head -n -m BigFile.txt &gt; BigFile.txt.tmp
-mv BigFile.txt.tmp BigFile.txt
-</code></pre>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-11-12T21:05:00+00:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/12/07/install-fabric-on-windows/">Install &#8216;Fabric&#8217; on Windows</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/linux/'>linux,</a>, <a class='category' href='/blog/categories/python/'>python,</a>, <a class='category' href='/blog/categories/tech/'>tech</a>, <a class='category' href='/blog/categories/wxpython/'>wxpython,</a>
+  
+</span>
 
 
-<time datetime="2012-12-07T02:29:00+00:00" pubdate data-updated="true">Dec 7<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/12/07/install-fabric-on-windows/#disqus_thread">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/" data-via="xydinesh" data-counturl="http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/30/increase-maximum-open-file-count-in-linux/" title="Previous Post: Increase the maximum open file count in linux">&laquo; Increase the maximum open file count in linux</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-  <div class="entry-content"><h2>Easy</h2>
-
-<p>If it works, pretty easy to do with pip</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>   $pip install fabric</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Trouble</h2>
-
-<p>Trouble started when I got an error while installing fabric on
-windows. Error seems to come from building pycrypto library.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>running build_ext
-</span><span class='line'>building 'Crypto.Random.OSRNG.winrandom' extension
-</span><span class='line'>warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastmath.
-</span><span class='line'>
-</span><span class='line'>error: Unable to find vcvarsall.bat</span></code></pre></td></tr></table></div></figure>
-
-
-<p>After scrolling through few webpages found a solution on <a href="http://stackoverflow.com/questions/2817869/error-unable-to-find-vcvarsall-bat" title="StackOverFlow Link">StackOverFlow</a> where it suggests to do following</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  &gt;SET VS90COMNTOOLS=%VS100COMNTOOLS%</span></code></pre></td></tr></table></div></figure>
-
-
-<p>or</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>    &gt;SET VS90COMNTOOLS=%VS110COMNTOOLS%</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Depending on your VS installation, and then</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$pip install fabric</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It gives following error, Argh !</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>build\temp.win32-2.7\Release\src\winrandom.pyd.manifest : general error c1010070
-</span><span class='line'>: Failed to load and parse the manifest. The system cannot find the file specifi
-</span><span class='line'>ed.
-</span><span class='line'>warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastmath.
-</span><span class='line'>
-</span><span class='line'>error: command 'mt.exe' failed with exit status 31</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Again after scrolling few pages, found an answer on <a href="http://fuyun.org/2009/12/install-mysql-for-python-on-windows/" title="Fuyun's Website">fuyu&rsquo;s</a> website.</p>
-
-<p>For the sake of completeness, I have quoted his/her solution.
-Now try to build it again. I got this error:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>buildtemp.win32-2.6Release_mysql.pyd.manifest : general error
-</span><span class='line'>c1010070: Failed to load and parse the manifest. 
-</span><span class='line'>The system cannot find  the file specified.
-</span><span class='line'>
-</span><span class='line'>error: command ‘mt.exe’ failed with exit status 31
-</span><span class='line'>
-</span><span class='line'>To fix this problem, go to C:\Python2.6\Lib\distutils, 
-</span><span class='line'>edit msvc9compiler.py, search for ‘MANIFESTFILE’, you will find the following line
-</span><span class='line'>
-</span><span class='line'>ld_args.append(‘/MANIFESTFILE:’ + temp_manifest)
-</span><span class='line'>
-</span><span class='line'>Then append the following line after the above line,
-</span><span class='line'>
-</span><span class='line'>ld_args.append(‘/MANIFEST’)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>then</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$pip install fabric
-</span><span class='line'>
-</span><span class='line'>   Creating library build\temp.win32-2.7\Release\src\_counter.lib and object
-</span><span class='line'>   build\temp.win32-2.7\Release\src\_counter.exp
-</span><span class='line'>C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe -nologo -mani
-</span><span class='line'>fest build\temp.win32-2.7\Release\src\_counter.pyd.manifest -outputresource:buil
-</span><span class='line'>d\lib.win32-2.7\Crypto\Util\_counter.pyd;2
-</span><span class='line'>warning: GMP or MPIR library not found; Not building Crypto.PublicKey._fastm
-</span><span class='line'>ath.
-</span><span class='line'>
-</span><span class='line'>Successfully installed pycrypto
-</span><span class='line'>Cleaning up...
-</span></code></pre></td></tr></table></div></figure>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -694,7 +461,7 @@ Now try to build it again. I got this error:</p>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/12/07/install-fabric-on-windows/">Install &#8216;Fabric&#8217; on Windows</a>
+        <a href="/blog/2012/12/07/install-fabric-on-windows/">Install 'Fabric' on Windows</a>
       </li>
     
   </ul>
@@ -703,7 +470,7 @@ Now try to build it again. I got this error:</p>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/xydinesh">@xydinesh</a> on GitHub
@@ -736,6 +503,7 @@ Now try to build it again. I got this error:</p>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -750,7 +518,10 @@ Now try to build it again. I got this error:</p>
       var disqus_shortname = 'weerapurageorg';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/';
+        var disqus_url = 'http://xydinesh.github.io/blog/2013/11/12/compile-wxpython-2-dot-9-5-dot-0-in-linux/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
