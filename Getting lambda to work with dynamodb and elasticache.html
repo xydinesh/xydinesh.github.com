@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Getting lambda to work with dynamodb and elasticache</title>
+  <style>
+    body {
+	font-family: sans-serif;
+	margin: 0 auto;
+	max-width: 48rem;
+	line-height: 1.45;
+	padding: 0.5rem 0 1.6rem;
+	box-shadow: 0 0 2rem 0 #bbb;
+	border-radius: 0 0 0.6rem 0.6rem;
+		}
+    main {
+	padding: 0 1.4rem;
+	hyphens: auto;
+    }
+    code {
+	background: #eee;
+	padding: 0.3rem;
+	tab-size: 4;
+    }
+    pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 0.3rem 0.6rem;
+    }
+    
+    nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	background: #000;
+    }
+    nav li {
+	list-style: none;
+    }
+    nav li * {
+	display: block;
+	padding: 0.4rem 0.4rem;
+	color: white;
+    }
+    nav li strong {
+	padding-left: 1.5rem;
+	padding-right: 1rem;
+    }
+    nav a {
+	text-decoration: none;
+    }
+    nav a:hover {
+	background: #17202a;
+    }
+  </style>  
+</head>
+<nav>
+	<ul>
+		<li><strong>Dinesh Weerapurage</strong></li>
+		<li><a href="index.html">Home</a></li>
+	</ul>
+</nav>
+  <main/>
+  <p>Getting lambda to work with dynamodb and elasticache</p>
+<p>This week I spent so much time trying to get <code>lambda</code> to work with <code>dynmodb</code> and <code>elasticache</code>. Everything worked well with <code>lambda</code> and <code>dynamodb</code> until I tried to integrate <code>elasticache</code>. </p>
+<p>While I was working with integrating <code>elasticache</code> and <code>lambda</code>, I created a VPC and put <code>lambda</code> and <code>elasticache</code> in the same VPC. I didn't realize that's when everything broke. Looking back, it feels so stupid. I was trying to debug why I couldn't connect to redis.</p>
+<pre><code class="language-python">    redis_name = os.environ.get('REDIS_NAME')
+    logger.debug('table name: {0}'.format(table_name))
+    logger.debug('redis name: {0}'.format(redis_name))
+    dynamo_client = boto3.resource('dynamodb', region_name=region)
+    rconn = redis.Redis(host=redis_name, port=6379, db=0)
+    dynamo_table = dynamo_client.Table(table_name)
+
+</code></pre>
+<p>I can see <code>redis name</code> getting logged into cloudwatch logs but then lambda timeout. Finally, I used my brain and decided to comment <code>redis.Redis</code> from the code. Then it hit me like a ton of bricks, <em>it wasn't redis connection timeout but dynamodb</em>.</p>
+<p>After that debugging got easier, because placing <code>lambda</code> into a VPC caused it to loose connection to the internet. In order to fix it, I had to re-create VPC with internetgateway and NAT so that <code>lambda</code> can connect to the internet. Apparently, <code>lambda</code> connects to the dynamodb over the internet. Who knew ! </p>
+</html>

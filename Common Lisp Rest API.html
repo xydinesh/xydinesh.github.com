@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Common Lisp Rest API</title>
+  <style>
+    body {
+	font-family: sans-serif;
+	margin: 0 auto;
+	max-width: 48rem;
+	line-height: 1.45;
+	padding: 0.5rem 0 1.6rem;
+	box-shadow: 0 0 2rem 0 #bbb;
+	border-radius: 0 0 0.6rem 0.6rem;
+		}
+    main {
+	padding: 0 1.4rem;
+	hyphens: auto;
+    }
+    code {
+	background: #eee;
+	padding: 0.3rem;
+	tab-size: 4;
+    }
+    pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 0.3rem 0.6rem;
+    }
+    
+    nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	background: #000;
+    }
+    nav li {
+	list-style: none;
+    }
+    nav li * {
+	display: block;
+	padding: 0.4rem 0.4rem;
+	color: white;
+    }
+    nav li strong {
+	padding-left: 1.5rem;
+	padding-right: 1rem;
+    }
+    nav a {
+	text-decoration: none;
+    }
+    nav a:hover {
+	background: #17202a;
+    }
+  </style>  
+</head>
+<nav>
+	<ul>
+		<li><strong>Dinesh Weerapurage</strong></li>
+		<li><a href="index.html">Home</a></li>
+	</ul>
+</nav>
+  <main/>
+  <h1>Common Lisp Rest API</h1>
+<p>After reading Paul Graham's "Hackers and Painters", I wanted learn "Common Lisp". I found "lisp-koans" to be a great resource for me to get started.
+After completing about 25 lessons of 27 koans, I wanted to try and create a REST api project with lisp. I found creating a REST API to be a difficult
+taks because I didn't know much about project structure and how to move forward with a lisp project. Therefore I decided to document the process I folowed
+to help someone else to get started. This may not be the best approach but it should help you to get started and move along with a REST API development.</p>
+<h2>Installing and Setup Environment.</h2>
+<p>I'm using <code>sbcl</code> as "Common Lisp" implementation and <code>Quicklisp</code> for package management. <a href="https://lispcookbook.github.io/cl-cookbook/getting-started.html#install-quicklisp">Lisp Cookbook</a> <code>Getting Started</code> guide provides a good starting point for installing <code>Lisp</code> and <code>Quicklisp</code> package manager.</p>
+<pre><code>brew install sbcl
+brew install rlwrap
+curl -O https://beta.quicklisp.org/quicklisp.lisp
+sbcl --load quicklisp.lisp
+</code></pre>
+<p>After "Common Lisp" REPL loads</p>
+<pre><code>(quicklisp-quickstart:install)
+(ql:add-to-init-file)
+</code></pre>
+<p>In order to install quickproject,</p>
+<pre><code>(ql:quickload &quot;quickproject&quot;)
+</code></pre>
+<h2>Create new project</h2>
+<p>I found that location that I create new project is important if I want to load it from the <code>sbcl</code> REPL after I make changes. We are going to create a new project <code>cl-start</code> in <code>~/quicklisp/local-projects</code> so that <code>quicklisp</code> able to discover and load this project without any issues. In addition, we will be using <code>Hunchentoot</code></p>
+<pre><code>(quickproject:make-project &quot;~/quicklisp/local-projects/cl-start&quot; :depends-on '(hunchentoot))
+WARNING: Coercing &quot;~/quicklisp/local-projects/cl-start&quot; to directory
+&quot;cl-start&quot;
+</code></pre>
+<pre><code>$tree ~/quicklisp/local-projects/cl-start
+├── README.md
+├── cl-start.asd
+├── cl-start.lisp
+└── package.lisp
+</code></pre>
+<p>Since we added project at <code>~/quicklisp/local-projects</code> we can load our project with <code>(ql:quickload "cl-start")</code></p>
+<h2>Common Lisp REST hello world</h2>
+<p>Add following code to cl-start.lisp</p>
+<pre><code>;;;; cl-start.lisp
+
+(in-package #:cl-start)
+
+;; Add a simple prefix dispatcher to the *dispatch-table*
+(setq *dispatch-table*
+      `(,(create-prefix-dispatcher &quot;/hello&quot; 'hello-page)))
+
+;; Handler functions either return generated Web pages as strings,
+;; or write to the output stream returned by write-headers
+(defun hello-page ()
+  &quot;Hello !&quot;)
+
+(defun main ()
+  (start (make-instance 'easy-acceptor :port 8080))
+  (sb-thread:join-thread (find-if
+                          (lambda (th)
+                            (string= (sb-thread:thread-name th) &quot;hunchentoot-listener-*:8080&quot;))
+                          (sb-thread:list-all-threads))))
+</code></pre>
+<p><code>package.lisp</code> contains following</p>
+<pre><code>;;;; package.lisp
+(ql:quickload '(:hunchentoot))
+
+(defpackage #:cl-start
+  (:use #:cl #:hunchentoot)
+    (:export :main))
+</code></pre>
+<h2>Makefile for creating an executable</h2>
+<p>Create a makefile with following content.</p>
+<pre><code>all: build
+build:
+        sbcl --load cl-start.asd \
+        --eval '(ql:quickload :cl-start)' \
+        --eval &quot;(sb-ext:save-lisp-and-die #p\&quot;cl-start\&quot; :toplevel #'cl-start:main :executable t)&quot;
+</code></pre>
+<h2>Compile and Running Server</h2>
+<pre><code>make
+
+sbcl --load cl-start.asd \
+        --eval '(ql:quickload :cl-start)' \
+        --eval &quot;(sb-ext:save-lisp-and-die #p\&quot;cl-start\&quot; :toplevel #'cl-start:main :executable t)&quot;
+This is SBCL 1.5.8, an implementation of ANSI Common Lisp.
+More information about SBCL is available at &lt;http://www.sbcl.org/&gt;.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+To load &quot;cl-start&quot;:
+  Load 1 ASDF system:
+    cl-start
+; Loading &quot;cl-start&quot;
+.....To load &quot;hunchentoot&quot;:
+  Load 1 ASDF system:
+    hunchentoot
+; Loading &quot;hunchentoot&quot;
+
+
+[undoing binding stack and other enclosing state... done]
+[performing final GC... done]
+[defragmenting immobile space... (fin,inst,fdefn,code,sym)=1597+1189+21847+21078+25890... done]
+[saving current Lisp image into cl-start:
+writing 0 bytes from the read-only space at 0x20000000
+writing 1264 bytes from the static space at 0x20100000
+writing 36798464 bytes from the dynamic space at 0x1000000000
+writing 2199552 bytes from the immobile space at 0x20300000
+writing 14176256 bytes from the immobile space at 0x21b00000
+done]
+</code></pre>
+<p>Above <code>make</code> command will create a <code>cl-start</code> executable that we use to run our HTTP Server</p>
+<pre><code>./cl-start
+</code></pre>
+<h2>client requests</h2>
+<p>On another window use <code>curl</code>  to send http requests to the server.</p>
+<pre><code>http &quot;http://localhost:8080/hello&quot;
+HTTP/1.1 200 OK
+Connection: Keep-Alive
+Content-Length: 7
+Content-Type: text/html; charset=utf-8
+Date: Wed, 11 Dec 2019 02:07:41 GMT
+Keep-Alive: timeout=20
+Server: Hunchentoot 1.2.38
+
+Hello !
+</code></pre>
+<h2>Code</h2>
+<p>Complete source code for this project is available in <a href="https://github.com/xydinesh/cl-start">github</a>.</p>
+</html>

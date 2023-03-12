@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Install Ansible on Alpine Linux</title>
+  <style>
+    body {
+	font-family: sans-serif;
+	margin: 0 auto;
+	max-width: 48rem;
+	line-height: 1.45;
+	padding: 0.5rem 0 1.6rem;
+	box-shadow: 0 0 2rem 0 #bbb;
+	border-radius: 0 0 0.6rem 0.6rem;
+		}
+    main {
+	padding: 0 1.4rem;
+	hyphens: auto;
+    }
+    code {
+	background: #eee;
+	padding: 0.3rem;
+	tab-size: 4;
+    }
+    pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 0.3rem 0.6rem;
+    }
+    
+    nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	background: #000;
+    }
+    nav li {
+	list-style: none;
+    }
+    nav li * {
+	display: block;
+	padding: 0.4rem 0.4rem;
+	color: white;
+    }
+    nav li strong {
+	padding-left: 1.5rem;
+	padding-right: 1rem;
+    }
+    nav a {
+	text-decoration: none;
+    }
+    nav a:hover {
+	background: #17202a;
+    }
+  </style>  
+</head>
+<nav>
+	<ul>
+		<li><strong>Dinesh Weerapurage</strong></li>
+		<li><a href="index.html">Home</a></li>
+	</ul>
+</nav>
+  <main/>
+  <h1>Install Ansible on Alpine Linux</h1>
+<p>Getting current ansible on a linux usually a easy task, can be done with <code>pip</code>.</p>
+<pre><code>pip install ansible
+</code></pre>
+<p>With Alpine I had to struggle a bit as it was missing some dependencies. After adding
+dependencies I could install Ansible via <code>pip</code>.</p>
+<pre><code>apk update &amp;&amp; apk add --no-cache musl-dev libffi-dev openssl-dev make gcc python py2-pip python-dev
+pip install cffi
+pip install ansible
+</code></pre>
+</html>

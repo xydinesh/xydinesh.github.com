@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <title>Nibiru command line client - Bluejay</title>
+  <style>
+    body {
+	font-family: sans-serif;
+	margin: 0 auto;
+	max-width: 48rem;
+	line-height: 1.45;
+	padding: 0.5rem 0 1.6rem;
+	box-shadow: 0 0 2rem 0 #bbb;
+	border-radius: 0 0 0.6rem 0.6rem;
+		}
+    main {
+	padding: 0 1.4rem;
+	hyphens: auto;
+    }
+    code {
+	background: #eee;
+	padding: 0.3rem;
+	tab-size: 4;
+    }
+    pre code {
+	display: block;
+	overflow-x: auto;
+	padding: 0.3rem 0.6rem;
+    }
+    
+    nav ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	background: #000;
+    }
+    nav li {
+	list-style: none;
+    }
+    nav li * {
+	display: block;
+	padding: 0.4rem 0.4rem;
+	color: white;
+    }
+    nav li strong {
+	padding-left: 1.5rem;
+	padding-right: 1rem;
+    }
+    nav a {
+	text-decoration: none;
+    }
+    nav a:hover {
+	background: #17202a;
+    }
+  </style>  
+</head>
+<nav>
+	<ul>
+		<li><strong>Dinesh Weerapurage</strong></li>
+		<li><a href="index.html">Home</a></li>
+	</ul>
+</nav>
+  <main/>
+  <h1>Nibiru command line client - Bluejay</h1>
+<p>‘bluejay’ is a command line client to work with production nibiru interface.</p>
+<h2>Installation</h2>
+<p>Install the latest bluejay from pypi using following command</p>
+<pre><code>pip install bluejay2
+</code></pre>
+<p>Then create <code>nibiru.ini</code> file in current directory or <code>~/.bluejay</code> directory as follows.</p>
+<pre><code>[default]
+token=‘xxxx-xxxx-xxx-xx’
+team='team_url_48'
+
+[48]
+token=‘xxx-xxx-xxx’
+team='team_url_48'
+
+[zz]
+token=‘xxxx-xxx-xxx-xx’
+team='team_url_zz'
+</code></pre>
+<h2>Commands</h2>
+<h4>Get instances, deployed from nibiru</h4>
+<pre><code>bluejay get
+</code></pre>
+<p>Get instances belong to different team</p>
+<pre><code>bluejay --profile=48 get
+</code></pre>
+<h4>Get more information about an insane</h4>
+<pre><code>bluejay get -i &lt;insance id&gt;
+bluejay get -i &lt;insance id&gt; --detailed
+bluejay get -n &lt;ip address&gt;
+</code></pre>
+<h4>Delete instance</h4>
+<pre><code>bluejay delete -i &lt;insance id&gt;
+</code></pre>
+<h4>Update an instance</h4>
+<pre><code>bluejay update -i &lt;insance id&gt; -s &lt;new size&gt;
+bluejay update -i &lt;insance id&gt; -t ‘create-for:testing’
+</code></pre>
+<h4>Create an instance</h4>
+<pre><code>bluejay create -e ‘dev’ --app-name ‘bluejayapp’ --tags 'created_for:testing'
+</code></pre>
+<h4>Get help on any command</h4>
+<pre><code>bluejay &lt;command&gt; --help
+</code></pre>
+<p>Example:</p>
+<pre><code>bluejay create --help
+Usage: bluejay create [OPTIONS]
+
+Options:
+  -e, --env TEXT                Select envrionment for deployment
+  -l, --location TEXT           Region to deploy
+  -c, --instance-count INTEGER  Number of instances to deploy
+  -s, --instance-size TEXT      Size of the instance
+  --app-name TEXT               Name of the application  [required]
+  --app-version TEXT            Version of the application
+  --public                      Deploy to public network
+  --aws                         Specify provider for deployment
+  --tags TEXT                   Tags for application  [required]
+  --help                        Show this message and exit.
+</code></pre>
+</html>
