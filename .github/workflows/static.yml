@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: Install Python
         run: |
-          sudo apt install pipenv && pipenv install
+          sudo apt install python3-pip && sudo pip3 install pipenv && sudo pipenv install
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Pages
