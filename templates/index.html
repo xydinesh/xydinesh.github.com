@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "header.html" %}
+  <main/>
+    {% for year, data in posts.items() | sort(attribute='0') | reverse %}
+  <h2>{{year}}</h2>
+  {% for post in posts[year] %}
+  {{post.date}} <a href="{{post.title}}.html"> {{post.title}}</a><br/>
+  {% endfor %}
+    {% endfor %}
+
+</html>
