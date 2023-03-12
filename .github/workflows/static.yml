@@ -33,7 +33,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install depencencies
-	run: pipenv install
+        run: pipenv install
       - name: Build the site
         run:  pipenv run python blog.py
       - name: Upload artifact
