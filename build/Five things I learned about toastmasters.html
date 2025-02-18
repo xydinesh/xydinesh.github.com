@@ -1,67 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>Five things I learned about toastmasters</title>
+  <!-- Optionally load a Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --color-background: #f9f9f9;
+      --color-white: #ffffff;
+      --color-black: #000000;
+      --color-shadow: rgba(0, 0, 0, 0.1);
+      --color-accent: #0066cc;
+      --color-accent-hover: #004699;
+      --color-text-body: #333333;
+    }
+
     body {
-	font-family: sans-serif;
-	margin: 0 auto;
-	max-width: 48rem;
-	line-height: 1.45;
-	padding: 0.5rem 0 1.6rem;
-	box-shadow: 0 0 2rem 0 #bbb;
-	border-radius: 0 0 0.6rem 0.6rem;
-		}
-    main {
-	padding: 0 1.4rem;
-	hyphens: auto;
+      background-color: var(--color-background);
+      margin: 0;
+      padding: 2rem 0;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--color-text-body);
     }
-    code {
-	background: #eee;
-	padding: 0.3rem;
-	tab-size: 4;
+
+    .main-container {
+      background-color: var(--color-white);
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: 2rem;
+      box-shadow: 0 4px 12px var(--color-shadow);
+      border-radius: 0.6rem;
     }
-    pre code {
-	display: block;
-	overflow-x: auto;
-	padding: 0.3rem 0.6rem;
-    }
-    
+
     nav ul {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	background: #000;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0.8rem 1.5rem;
+      background: linear-gradient(to right, #000, #444);
     }
-    nav li {
-	list-style: none;
-    }
-    nav li * {
-	display: block;
-	padding: 0.4rem 0.4rem;
-	color: white;
-    }
+
     nav li strong {
-	padding-left: 1.5rem;
-	padding-right: 1rem;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-right: 2rem;
+      color: #fff;
     }
+
     nav a {
-	text-decoration: none;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      transition: background 0.2s ease, color 0.2s ease;
     }
+
     nav a:hover {
-	background: #17202a;
+      background: #222;
     }
-  </style>  
+
+    nav a:focus {
+      outline: 2px solid #ffa500;
+      outline-offset: 2px;
+    }
+
+    main {
+      margin-bottom: 2rem;
+    }
+
+    .year-heading {
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+
+    .year-section {
+      margin-bottom: 2rem;
+    }
+
+    .post-line {
+    display: flex;
+    align-items: baseline; /* Keeps them on the same vertical baseline */
+    margin-bottom: 0.5rem;
+    }
+
+    .post-date {
+    width: 6rem; /* adjust to your liking */
+    font-weight: 600; /* optional, to emphasize date */
+    text-align: right; /* date is right-aligned within its 6rem */
+    margin-right: 1rem; /* spacing between date and link */
+    }
+
+
+    .post-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease;
+    }
+
+    .post-link:hover {
+    color: var(--color-accent-hover);
+    background: #f0f0f0;
+    text-decoration: underline;
+    }
+
+    .post-line {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-link:focus {
+      outline: 2px solid #ffa500;
+      outline-offset: 2px;
+    }
+
+    code {
+      background: #eee;
+      padding: 0.3rem 0.6rem;
+      tab-size: 4;
+      border-radius: 0.2rem;
+    }
+
+    pre code {
+      display: block;
+      overflow-x: auto;
+      padding: 0.6rem 1rem;
+    }
+
+    .site-footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
-<nav>
+  <body>
+    <nav>
 	<ul>
 		<li><strong>Dinesh Weerapurage</strong></li>
 		<li><a href="index.html">Home</a></li>
+        <li><a href="now.html">Now</a></li>
 	</ul>
 </nav>
-  <main/>
-  <h1>Five things I learned about toastmasters</h1>
+    <div class="main-container">
+      <main>
+        <h1>Five things I learned about toastmasters</h1>
 <p>Let me explain how I feel about public speaking. I like public speaking but I didn’t enjoy doing in front of an audience. No matter how I tell myself to be calm and nothing to be worry about a speech I’m going to give. Few minutes before my speech my heart beat starting to rise. At that time, I don’t have time to do relaxing exercises. Then I’m trying to take my mind out of thinking about the speech.  Still I can feel my heart is beating very fast. When it is my turn to speak, I walk to lectern or stage then I get to see the audience. Oh too many people. Then I forget the content. If I rehearse well I can do opening of my speech, but I know my voice will sound nervous, I will sound monotone and If I have slides I can get away reading slides. Hoping I could remember rest of the speech when I need. It was clear to me there was big room for improvement. Also, I realized that only way to improve public speaking is to practice. I think public speaking is a skill like swimming. You have to do if you want to get better.</p>
 <p>One of my friend and co-worker started attending toastmasters club in Knoxville and talked about his experience. When Dananjaya Hettiarachchi won world public speaking contest I convinced my self to tryout toastmasters club. I was looking for a club near Knoxville that I can attend after work and found Central Communicators Toastmasters club between my office and work. On my first day, toastmasters club had about ten members. All of them welcome guests very gladly. Since I was talking time away from my family to attend toastmasters I wanted to get maximum out of it from the beginning.</p>
 <p>I learned few things about toastmasters I didn’t know before. I thought to write them down for myself.</p>
@@ -83,4 +174,10 @@ Focus of the other manual "Competence Leadership Manual" is improving leadership
 <p>Toastmasters club has a leadership track. It is designed to help you to become a better leader. At the beginning you will get two manuals. One for communication and other one for leadership. In leadership manual, it has number of projects which you need to participate in meeting roles focusing on different aspects of leadership. For instance one time it is listening, another time it is team work. Every time you work on a leadership project from the manual, you have to find someone to evaluate your role. For example, if you are the toastmaster for the meeting and working on leadership project for time management for toastmaster. You have to find an evaluator and explain what your are doing. Then ask him to evaluate you according to the manual and make notes on your manual.</p>
 <h3>5. Opportunity to improve writing skills</h3>
 <p>Improving my writing was not on my list when I joined toastmasters. Guess what, I have been writing 600-700 word speeches every week last couple of week. I know, you will not get much feedback for writing as for speaking with toastmasters. However you will develop a skill of speech writing. Especially writing for ears is different from our regular writing. I have been trying to write short sentences and use more active voice so that listeners can follow my speech easily. Importantly, when you have a speech coming up you have motivation to start writing and rehearsing speech as early as possible. Last couple weeks my strategy was committing myself to speeches every week so that I have to prepare for next speech from Tuesday night, just after toastmasters meeting.</p>
+      </main>
+      <footer class="site-footer">
+  <p>&copy; 2025 Dinesh Weerapura</p>
+</footer>
+    </div>
+    </body>
 </html>

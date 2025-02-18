@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   {% include "header.html" %}
-  <main/>
-    {% for year, data in posts.items() | sort(attribute='0') | reverse %}
-  <h2>{{year}}</h2>
-  {% for post in posts[year] %}
-  {{post.date}} <a href="{{post.title}}.html"> {{post.title}}</a><br/>
-  {% endfor %}
-  {% endfor %}
-
+  <body>
+    {% include "nav.html" %}
+    <div class="main-container">
+    <main>
+      {% for year, data in posts.items() | sort(attribute='0') | reverse %}
+      <h2 class="year-heading">{{year}}</h2>
+      <div class="year-section">
+      {% for post in posts[year] %}
+      <div class="post-line">
+        <span class="post-date">{{post.date}}</span> <a class="post-link" href="{{post.title}}.html"> {{post.title}}</a><br/>
+        </div>
+      {% endfor %}
+      </div>
+      {% endfor %}
+    </main>
+    {% include "footer.html" %}
+    </div>
+  </body>
 </html>
