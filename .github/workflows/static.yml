@@ -35,7 +35,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-           python-version: '3.10'  # Adjust based on your Pipfile
+           python-version: '3.11'  # Adjust based on your Pipfile
       - name: Install depencencies
         run: pipenv install
       - name: Build the site
