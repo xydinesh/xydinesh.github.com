@@ -4,4 +4,4 @@ As I've written in the past, I enjoy writing. However, I have trouble expressing
 
 I can relate this to David Allen's Getting Things Done. A main concept of GTD technique is getting things out of our head. It helps us move open loops, those nagging unfinished thoughts into a system that captures them. When thinking, the way to get things out of our head is writing that create space for new thoughts.
 
-When I want to think about something, I write down everything I know about that topic. Then, I reread it, adding and removing things on the page as I go. I've found that digital tools (Obsidian, notepad, email) help me get ideas out quickly and shape them faster. 
+When I want to think about something, I write down everything I know about that topic. Then, I reread it, adding and removing things on the page as I go. I've found that digital tools (Obsidian, notepad, email) help me get ideas out quickly and shape them faster.
