@@ -25,21 +25,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Install pipenv
-        run: |
-          sudo apt install python3-pip && sudo pip3 install pipenv
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-           python-version: '3.11'  # Adjust based on your Pipfile
-      - name: Install depencencies
-        run: pipenv install
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install
       - name: Build the site
-        run:  pipenv run python blog.py
+        run: npx @11ty/eleventy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
