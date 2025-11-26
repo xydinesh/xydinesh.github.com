@@ -6,16 +6,19 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-      .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
-        gap: 2rem;
+      @media (min-width: 768px) {
+        .grid-container {
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+          gap: 2rem;
+        }
       }
     </style>
 </head>
 <body>
     <div class="container grid-container">
         <aside>
+            <h3>Topics</h3>
             <ul>
             <li><a href="/">home</a></li>
             {% for tag in collections.tagList %}
