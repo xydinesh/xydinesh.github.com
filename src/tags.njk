@@ -11,8 +11,6 @@ permalink: "/tags/{{ tag | slug }}/"
 {% extends "base.njk" %}
 
 {% block content %}
-  <h1>Tagged “{{ tag }}”</h1>
-
   <ul>
   {% set postslist = collections[ tag ] %}
   {% for post in postslist | reverse %}

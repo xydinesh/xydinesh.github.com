@@ -16,8 +16,8 @@
 <body>
     <div class="container grid-container">
         <aside>
-            <h3>Topics</h3>
             <ul>
+            <li><a href="/">home</a></li>
             {% for tag in collections.tagList %}
               <li><a href="/tags/{{ tag }}/">{{ tag }}</a></li>
             {% endfor %}
