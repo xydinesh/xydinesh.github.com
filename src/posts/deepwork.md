@@ -6,7 +6,7 @@ tags: ["books"]
 
 November, 2025
 
-This week (November 25, 2025) I had an opportunity to read Deep Work by Cal Newport. It highlights the value of focusing on something for long period of time. 
+This week I read Deep Work by Cal Newport. It highlights the value of focusing on something for long period of time. This post contains some of the highlights from the book. 
 
 ### Rule 1: Work Deeply
 
