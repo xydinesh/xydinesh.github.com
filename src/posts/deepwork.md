@@ -2,11 +2,12 @@
 title: "Deep Work"
 layout: "post.njk"
 tags: ["books"]
+date: 2025-11-25
 ---
 
 November, 2025
 
-This week I read Deep Work by Cal Newport. It highlights the value of focusing on something for long period of time. This post contains some of the highlights from the book. 
+This week I read Deep Work by Cal Newport. It highlights the value of focusing on something for long period of time. This post contains some of the highlights from the book.
 
 ### Rule 1: Work Deeply
 
@@ -16,9 +17,9 @@ This week I read Deep Work by Cal Newport. It highlights the value of focusing o
 - Divide your time between deep work and shallow work
 	- Take couple of days in the week to do deep work
   - Don't answer emails or attend any meetings. Pretend that you are out of office
-- Do deep work whenever you have time 
+- Do deep work whenever you have time
 	- Find blocks of time to focus and do deep work during the day
-- Make grand guestures that could help to do deep work. 
+- Make grand gestures that could help to do deep work.
 	- Check into a luxury hotel to finish your work free from distractions
 - Work with partners who can support your deep work.
 
@@ -28,16 +29,16 @@ This week I read Deep Work by Cal Newport. It highlights the value of focusing o
 - Act on the lead measures
 	- How to measure your success with lead measures
 	- time spent on deep work
-- Keep a compelling score board
+- Keep a compelling scoreboard
 	- Keep a scoreboard to track lead measures towards your goals
 - Create a cadence of Accountability
-	- Regular cadence meeting to review the score board
+	- Regular cadence meeting to review the scoreboard
 	- Understand what was your results for past week and why it happened
 
 **Disconnect from Work**
 - To support your deep work during the day, have a clear downtime
-- Check emails, Note down unfinished tasks and tasks for next day 
-- Then shutdown the work day, don’t do any work related things after shutdown.
+- Check emails, Note down unfinished tasks and tasks for next day
+- Then shutdown the workday, don’t do any work related things after shutdown.
 - Let mind relax and wind down, it will help prepare for the next day deep work sessions
 
 ### Rule 2: Embrace The Boredom
@@ -47,10 +48,10 @@ This week I read Deep Work by Cal Newport. It highlights the value of focusing o
 - Have specific time to access internet, beyond those times don't access internet
 - Practice this both during work hours and off hours
 
-**Work like Ted Roosvelt**
+**Work like Ted Roosevelt**
 - Identify a deep work task
 - Setup a deadline that is shorter than how long it will take
-- Start with one session per week, then increase frequency. 
+- Start with one session per week, then increase frequency.
 - Important to give shorter deadlines for these dashes
 
 **Structured Deep Thinking**
@@ -66,7 +67,7 @@ This week I read Deep Work by Cal Newport. It highlights the value of focusing o
 - See if you really miss it. If it doesn’t keep continue to not use them, if it is get back to it.
 - The cultivating friendship requires investing time and effort for those friendships. It is more than social media can offer. Therefore free time from social media to accommodate what really matters to you.
 
-### Rule 4: Drain The Shllows
+### Rule 4: Drain The Shallows
 
 **Schedule every minute**
 - Create a detailed schedule for the day

@@ -1,6 +1,10 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("post", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("src/posts/**/*.md");
+    return collectionApi.getFilteredByGlob("src/posts/**/*.md").sort((itemA, itemB) => {
+      const dateA = itemA.data.last_edited || itemA.data.date;
+      const dateB = itemB.data.last_edited || itemB.data.date;
+      return new Date(dateB) - new Date(dateA); // Descending order
+    });
   });
 
   eleventyConfig.addCollection("tagList", function(collectionApi) {

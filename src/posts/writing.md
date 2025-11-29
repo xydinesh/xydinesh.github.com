@@ -2,6 +2,7 @@
 title: "Writing to Think"
 layout: "post.njk"
 tags: ["writing"]
+date: "2025-03-29"
 ---
 
 As I've written in the past, I enjoy writing. However, I have trouble expressing my ideas in a useful way in blog posts. I think the issue was, I was thinking about what to write. I used writing as a way of expressing my thinking which is the wrong approach. Writing should be a means of thinking, not merely the end result of it.
