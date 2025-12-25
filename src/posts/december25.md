@@ -30,7 +30,7 @@ This book gave me several new insights into how to live and how to manage interp
 
 2. "Don't believe everything you think" by Joseph Nguyen
 
-A small book, the main premise of the book is to encourage you to stay mindful all the time. The book refers to this time as time of non-thinking; for me, it the time when you are mindful.
+A small book, the main premise of the book is to encourage you to stay mindful all the time. The book refers to this time as time of non-thinking; for me, it is the time when you are mindful.
 
 3. "Models: Attract women through honesty" by Mark Manson
 
