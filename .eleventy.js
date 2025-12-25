@@ -1,4 +1,13 @@
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
+
 module.exports = function(eleventyConfig) {
+  const md = new markdownIt({
+    html: true,
+  }).use(markdownItAnchor);
+
+  eleventyConfig.setLibrary("md", md);
+
   eleventyConfig.addCollection("post", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/**/*.md").sort((itemA, itemB) => {
       const dateA = itemA.data.last_edited || itemA.data.date;
