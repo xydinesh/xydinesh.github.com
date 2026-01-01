@@ -40,3 +40,10 @@ I'm still reading this, and I like the framework the author is suggesting. Rejec
 
 This is a middle school fiction, that takes place in Florida. I haven't read much fiction, but I enjoyed this book.
 
+5. "Extreme Ownership" by Jocko Willink & Leif Babin
+
+Good leadership principles book where authors share their experiences in battlefield and breaks down principles on how to apply in business.
+
+6. "Tourist Season" by Carl Hiaasen
+
+Another novel that takes place in Florida. This is a humorous and mystery novel.
