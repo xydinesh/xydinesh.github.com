@@ -5,13 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
       @media (min-width: 768px) {
         .grid-container {
           display: grid;
           grid-template-columns: 1fr 3fr;
           gap: 2rem;
         }
+      }
+
+      main {
+        padding-top: 4rem;
+      }
+
+      main ul {
+        padding-left: 0;
+      }
+
+      main li {
+        margin-bottom: 0.75rem;
+      }
+
+      main li a {
+        font-size: 1.1rem;
       }
     </style>
 </head>

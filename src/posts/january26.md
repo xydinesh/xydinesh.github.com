@@ -28,7 +28,7 @@ I started playing MTG with my kids this month. All of us are learning at the mom
 Last night (Jan 10, 2026) we went to see [Alex Cuba](https://www.alexcuba.com/). Though his songs are in Spanish, he communicates in English. He is a talented musician both vocals and guitar. Real entertainer at the live show. Both of my kids enjoyed the show.
 
 ## Peace
-Last month I intentionally limit my meditation practice to stay mindful during the day. I found that my mind was not centered and calm without morning practice. Therefore, I started back my regular practice this month. I can see the difference and I need the morning practice as way of keeping me centered. I'm following [Mahasi Tradition](https://sirimangalo.org/) for about 6 years now.
+Last month I intentionally limit my meditation practice to stay mindful during the day. I found that my mind was not centered and calm without morning practice. Therefore, I started back my regular practice this month. I can see the difference and I need the morning practice as way of keeping me centered. I'm following [Mahasi tradition](https://sirimangalo.org/) for about 6 years now.
 
 ## Reading
 I'm reading these books right now. I found having mutliple books and read one chapter of them each day gives me more time to reflect on what I read. Also, it gives me ability to take notes on the chapter I read.
