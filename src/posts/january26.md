@@ -33,9 +33,9 @@ Last month I intentionally limit my meditation practice to stay mindful during t
 ## Reading
 I'm reading these books right now. I found having mutliple books and read one chapter of them each day gives me more time to reflect on what I read. Also, it gives me ability to take notes on the chapter I read.
 
-1. Show your work by Austen Kleon
+1. "Show your work" by Austen Kleon
 - This is good book about how to create a following for your work and how and what to share.
-2. Principles by Ray Dalio
+2. "Principles" by Ray Dalio
 - I'm reading life principles and taking notes. I really like his framework where he create principles from the experiences, so that next time he has a decision making process for that situation.
 3. "What do you want out of life" by Valerie Tiberius
 - This is absoluetly an unexpected find. I think Libby app gave me this recommendation. I love how she approaches serious questions. For example, values are your most important goals. After she put it that way, it make a lot of sense.
