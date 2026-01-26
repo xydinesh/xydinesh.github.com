@@ -23,9 +23,9 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 - Collecting these gems improves my decision making
 - I will get through setbacks and most of the learning comes from reflecting on them
 
-**Be a hyper-realist**
+**Be a hyper realist**
   - People who create great things are grounded in the reality
-  - Dreams + Reality + Determination = Successful Life
+  - <mark>Dreams + Reality + Determination = Successful Life</mark>
   - Getting more out life is just wasn’t only working harder at it
 
 **Truth - essential for any good outcome**
@@ -73,7 +73,7 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 
 **Own your outcomes**
   - It is not what life gives you is important, what do you make out of is more important
-  - “internal locus of control” focus on things under your control
+  - <mark>“internal locus of control” focus on things under your control</mark>
 
 **Look at the machine from a higher level**
   - Look at your outcomes with the goal to determine if you want to make modifications to the machine.
@@ -97,13 +97,13 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
   - Typically, desires are first-order consequence
   - Be ambitious with your goals. There is a best possible path to get to that goal. Your job is to find it and have the courage to attain it
   - If you limit your goals to you know what you can achieve, you are setting the bar way too low
-  - To succeed you need, flexibility and, self accountability
-  	- Flexibility => learn what reality teaches you
-  	- Self accountability => treat failure to achieve goals as personal failures, and motivated to find a way to succeed
+  - <mark>To succeed you need, flexibility and, self accountability</mark>
+  	- <mark>Flexibility => learn what reality teaches you</mark>
+  	- <mark>Self accountability => treat failure to achieve goals as personal failures, and motivated to find a way to succeed</mark>
   - In the bad times, make the best possible choices. It can help you to keep what you have, minimize the rate of loss.
 
 **Identify and resolve problems on the way**
-  - View painful problems as potential improvements.Therefore it is essential to bring them to surface
+  - <mark>View painful problems as potential improvements.Therefore it is essential to bring them to surface</mark>
   - Acknowledging your weakness are not same as surrendering to them. It is the first step of overcoming them
   - Different problems have different impact and different priorities.
   - After you identify a problem, don’t tolerate them
@@ -113,8 +113,8 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
   - The ability to look at them selves and others objectively and figure out root causes stand in the way differentiate people who can achieve their full potential from who can not
 
 **Design plans that will go around them**
-  -  Think about your problems as set of outcomes produced by a machine
-  	- Practice higher level thinking by looking down your life as a system, try to optimize different parts
+  - <mark> Think about your problems as set of outcomes produced by a machine</mark>
+  	- <mark>Practice higher level thinking by looking down your life as a system, try to optimize different parts</mark>
   - Sketch out the plan broadly at first and then refine it
 
 **Push through to completion**
@@ -143,7 +143,7 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 
 **Practice radical open-mindness**
   - Know that there is a possibility where you don’t see your best options, it is your job to figure out with help from others
-  - Finding truth is more important than being right
+  - <mark>Finding truth is more important than being right</mark>
   - Sincerely believe that you don’t know the best possible path
   - Decision making is two step process
   	- Taking in the information
@@ -152,7 +152,7 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
   - Remember that you are looking for the best answer with in the group, regardless of where it comes from
 
 **Practice the thoughtful disagreements**
-  - In thoughtful disagreement the goal is to figure out which view is right and what to do about it
+  - <mark>In thoughtful disagreement the goal is to figure out which view is right and what to do about it</mark>
   - You are not arguing, you are exploring what is true
   - People who changed their minds because they learned something are the winners
   - “two minute” rule is to let other person speak without interruption for two minutes
@@ -168,7 +168,7 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 
 **Improve your open-mindness**
   - Use pain as a guide for reflection
-  	- **Pain comes from being too attached to an idea, when an event or a person come to challenge it**
+  	- <mark>Pain comes from being too attached to an idea, when an event or a person come to challenge it</mark>
   - Get to know your blind spots
   	- Record circumstances where you made bad decisions and failed to see what others saw
   - If number of believable people say that you are doing something wrong, and you don’t see it that way, know that you are biased
@@ -181,7 +181,7 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 - All these activities require different types of people to work together in ways that harvest the best ideas and throw away the worst.
 
 **Power comes from understanding how the people are wired**
-  - Using Myers-Briggs and other assessments, we evolved a much clearer and more data-driven way of understanding our different types of thinking.
+  - <mark>Using Myers-Briggs and other assessments, we evolved a much clearer and more data-driven way of understanding our different types of thinking.</mark>
   - We are born with attributes that can help or hurt us
   - Assign work to people that are align with their values
   - Having a baseball card system to display strength and weakness of the people
@@ -254,7 +254,7 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 - Make decision based on the expected value
 - It never hurt to ask, is a decision based on the expected value
 - Work on raising probability of being right, regardless of your current probability of being right
-- Best choices are the ones with more pros than cons, you can’t find choices without cons
+- <mark>Best choices are the ones with more pros than cons, you can’t find choices without cons</mark>
 - What is the cost of not deciding
 	- Separate must do’s from like to do’s
 	- Chances are you won’t have time to deal with unimportant things, which is better than not having time to deal with important things
@@ -272,9 +272,9 @@ The Principles by Ray Dalio has three main sections. First section is an introdu
 - Use computer to make decisions based on your principles
 	- You need to have enough knowledge to evaluate computer decisions as good or bad
 	- A lot of people put their blind faith in machine learning because it is easier than developing a deep understanding
-- In order to have the best life
-  - You should know what are the best decisions
-  - Have courage to make them
+- <mark>In order to have the best life</mark>
+  - <mark>You should know what are the best decisions</mark>
+  - <mark>Have courage to make them</mark>
 
 **Putting it All Together**
 - Embrace the reality and learn to deal with it well
