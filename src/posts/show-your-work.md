@@ -28,8 +28,8 @@ January, 2026
 	- They have little regard to become successful or fame, because they have little to loose
 - Moving from mediocre to good happens in steps. It happens as a result of doing something. If you don’t do anything you will not be good.
 - The best way to get started on the path to sharing your work is to think about what you want to learn, and make a commitment to learning it in front of others.
-- Only way to find your voice is to use it
-- Death is inevitable, think about it to get a perspective on things. Reading obituaries is a good way to remind about death
+- <mark>Only way to find your voice is to use it</mark>
+- <mark>Death is inevitable, think about it to get a perspective on things. Reading obituaries is a good way to remind about death</mark>
 
 ## Pay attention to your process
 - Share your creative process with your audience
@@ -40,7 +40,7 @@ January, 2026
 ## Own your content
 - Allocate more time to doing work than sharing work
 - What are you working on?
-- Share something every day, it could be an email, blog post, tweet, or YouTube post
+- <mark>Share something every day, it could be an email, blog post, tweet, or YouTube post</mark>
 	- The medium of sharing doesn’t matter, as long as you are sharing
 - Ask so what every time you publish your work
 - Ask yourself, “Is this helpful? Is it entertaining? Is it something I’d be comfortable with my boss or my mother seeing?”
@@ -54,7 +54,7 @@ January, 2026
 	- Why we should care
 	- How did you found it
 	- Where can we find more things like it
-- If you came across something and can’t give proper credits, don’t share it
+- <mark>If you came across something and can’t give proper credits, don’t share it</mark>
 - Create a link to the original creator, make other peoples’ lives easier
 - When you find something you enjoy, celebrate them. Don’t feel guilty about things you enjoy
 
@@ -68,7 +68,7 @@ January, 2026
 
 ## Teach what you know
 - They (Franklin BBQ) explained that the technique of barbecue is actually very simple, but it takes years and years to master.
-- Teaching doesn’t mean you will get an instant competition
+- <mark>Teaching doesn’t mean you will get an instant competition</mark>
 - The minute you learn something, turn around and teach it to others. Share your reading list.
 - Teaching people doesn’t subtract value from what you do, it actually adds to it.
 
@@ -91,7 +91,7 @@ January, 2026
 - Be ambitious, keep yourself busy
 
 ## Stick Around
-- The people who get what they’re after are very often the ones who just stick around long enough. It’s very important not to quit prematurely.
+- <mark>The people who get what they’re after are very often the ones who just stick around long enough. It’s very important not to quit prematurely.</mark>
 - “In our business you don’t quit,” says comedian Joan Rivers. “You’re holding on to the ladder. When they cut off your hands, hold on with your elbow. When they cut off your arms, hold on with your teeth. You don’t quit because you don’t know where the next job is coming from.”
 - You can’t plan on anything, you can go about your work
 - Some time we have to walk away completely from our work to avoid burn out
