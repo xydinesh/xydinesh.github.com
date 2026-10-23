@@ -71,3 +71,7 @@ build/Release
 **/Thumbs.db
 **/.vscode/
 **/.idea/
+
+# Eleventy output and brainstorming mockups
+build/
+.superpowers/
