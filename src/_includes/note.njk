@@ -12,7 +12,7 @@
       <h1>{{ title }}</h1>
       <dl class="meta note-meta">
         <dt>by:</dt><dd>{{ author }}</dd>
-        <dt>categories:</dt><dd>{% for c in categories %}<span class="tag">{{ c }}</span>{% endfor %}</dd>
+        <dt>categories:</dt><dd>{% for c in categories %}<span class="tag">{{ c }}</span> {% endfor %}</dd>
         <dt>finished:</dt><dd>{{ finished | isoDate }}</dd>
       </dl>
     </div>

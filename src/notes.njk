@@ -4,6 +4,17 @@ layout: "base.njk"
 permalink: "/notes/"
 description: "Notes and highlights from books I've read."
 ---
-{% from "entry-list.njk" import entryList %}
-<h1>Book Notes</h1>
-{{ entryList(collections.notesByFinished, false) }}
+<div class="notes-head">
+  <h1>Book Notes</h1>
+  <div class="sort" id="notes-sort" role="group" aria-label="Sort notes" hidden>
+    <span class="meta">sort:</span>
+    <button type="button" data-sort="finished" aria-pressed="true">date read</button>
+    <button type="button" data-sort="title" aria-pressed="false">title</button>
+    <button type="button" data-sort="rating" aria-pressed="false">rating</button>
+  </div>
+</div>
+<ul class="grid" id="notes-grid">
+  {%- for note in collections.notesByFinished %}
+  {% include "card.njk" %}
+  {%- endfor %}
+</ul>

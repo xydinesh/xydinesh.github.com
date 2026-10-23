@@ -1,0 +1,13 @@
+<li class="card" data-finished="{{ note.data.finished }}" data-title="{{ note.data.title | lower }}" data-rating="{{ note.data.rating or 0 }}">
+  <a href="{{ note.url }}">
+    {% if note.data.coverUrl %}
+    <img class="cover" src="{{ note.data.coverUrl }}" alt="" width="200" height="300" loading="lazy">
+    {% else %}
+    <span class="cover tile" aria-hidden="true">{{ note.data.title }}</span>
+    {% endif %}
+    <h2 class="card-title">{{ note.data.title }}</h2>
+  </a>
+  <p class="meta card-author">{{ note.data.author }}</p>
+  <p class="meta tags">{% for c in note.data.categories %}<span class="tag">{{ c }}</span> {% endfor %}</p>
+  <p class="card-summary">{{ note.data.summary }}</p>
+</li>
