@@ -1,11 +1,7 @@
 ---
 title: "What Do You Want Out of Life?"
-layout: "post.njk"
-tags: ["books"]
 date: 2026-02-01
 ---
-
-February, 2026
 
 ## Table of Contents
 - [1. What do we want and what stands in the way](#section-1)

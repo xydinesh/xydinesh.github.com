@@ -1,0 +1,9 @@
+---
+title: "Book Notes"
+layout: "base.njk"
+permalink: "/notes/"
+description: "Notes and highlights from books I've read."
+---
+{% from "entry-list.njk" import entryList %}
+<h1>Book Notes</h1>
+{{ entryList(collections.notesByFinished, false) }}

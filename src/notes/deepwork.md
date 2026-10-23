@@ -1,15 +1,11 @@
 ---
 title: "Deep Work"
-layout: "post.njk"
-tags: ["books"]
 date: 2025-11-25
 ---
 
-November, 2025
-
 This week I read Deep Work by Cal Newport. It highlights the value of focusing on something for long period of time. This post contains some of the highlights from the book.
 
-### Rule 1: Work Deeply
+## Rule 1: Work Deeply
 
 **There are different ways to do deep work**
 - Work like a monastic
@@ -41,7 +37,7 @@ This week I read Deep Work by Cal Newport. It highlights the value of focusing o
 - Then shutdown the workday, don’t do any work related things after shutdown.
 - Let mind relax and wind down, it will help prepare for the next day deep work sessions
 
-### Rule 2: Embrace The Boredom
+## Rule 2: Embrace The Boredom
 
 **Define Internet Access Blocks**
 
@@ -61,13 +57,13 @@ This week I read Deep Work by Cal Newport. It highlights the value of focusing o
 	- How I’m going to effectively open this chapter
 - Review clearly the answer you identified
 
-### Rule 3: Quit Social Media
+## Rule 3: Quit Social Media
 
 **Quit social media for 30 days**
 - See if you really miss it. If it doesn’t keep continue to not use them, if it is get back to it.
 - The cultivating friendship requires investing time and effort for those friendships. It is more than social media can offer. Therefore free time from social media to accommodate what really matters to you.
 
-### Rule 4: Drain The Shallows
+## Rule 4: Drain The Shallows
 
 **Schedule every minute**
 - Create a detailed schedule for the day

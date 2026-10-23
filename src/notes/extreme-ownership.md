@@ -1,10 +1,8 @@
 ---
 title: "Extreme Ownership"
-layout: "post.njk"
-tags: ["books"]
 date: 2025-12-31
+legacySlug: "exterme-ownership"
 ---
-December, 2025
 
 Initially I was skeptical about this book, but then I decided to give it a try. I must admit this is a good book. It contains more war stories than I like, but authors separated principles into a different section in each chapter. This specially good book, if someone transitioning from an individual contributor (IC) to manager in a company.
 

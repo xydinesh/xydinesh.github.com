@@ -1,11 +1,7 @@
 ---
 title: "Courage to be disliked"
-layout: "post.njk"
-tags: ["books"]
 date: 2025-12-25
 ---
-
-December, 2025
 
 In this book author presents concepts in Adlerian psychology as a dialogue between a philosopher and a novice.The biggest takeaways from this book for me were, self-acceptance, confidence in others, separation of tasks and pursuit of superiority.
 

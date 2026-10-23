@@ -1,11 +1,7 @@
 ---
 title: "Show your work"
-layout: "post.njk"
-tags: ["books"]
 date: "2026-01-11"
 ---
-
-January, 2026
 
 [Show your work](https://austinkleon.com/show-your-work/) by Austin Kleon. The format is different from other books I have read. It is engaging and has fun graphics. While I'm not agreeing with all of this points, author gives actionable advice. I added my notes and highlights below. While I followed original chapter sequence for my notes, and I changed original chapter names to something that make sense to me.
 

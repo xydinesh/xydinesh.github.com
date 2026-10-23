@@ -1,11 +1,7 @@
 ---
 title: "Principles (Life)"
-layout: "post.njk"
-tags: ["books"]
 date: 2026-01-25
 ---
-
-January, 2025
 
 The Principles by Ray Dalio has three main sections. First section is an introduction about his life and how did he get to where he is today. The second part is about life principles and, the third section is about work principles. This is not the easiest book to read, but there are a lot of useful information packed in it. This notes are from the second section the book.
 

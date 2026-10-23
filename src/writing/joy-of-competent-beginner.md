@@ -1,10 +1,7 @@
 ---
 title: "Joy of a competent beginner"
-layout: "post.njk"
-tags: ["writing"]
 date: "2026-01-22"
 ---
-January, 2026
 
 I enjoy learning new things for short periods of time. Usually only for one to two months. I love the journey where I start from without knowing anything to a competent skill level. I called this stage "competent beginner". In the competent beginner stage, I'm still a beginner but I have knowledge to make informed decisions on safety, equipment, and skills of that activity.
 

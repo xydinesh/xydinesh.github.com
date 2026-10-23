@@ -1,9 +1,8 @@
 ---
 title: "Don't believe everything you think"
-layout: "post.njk"
-tags: ["books"]
 date: 2025-12-27
 ---
+
 
 This book highlights the importance of mindfulness and dangers of distracted mind. Author lays out practical advises for establishing mindful (non-thinking) state. Here are some of the notes from the book,
 

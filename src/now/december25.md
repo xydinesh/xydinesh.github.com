@@ -1,11 +1,7 @@
 ---
 title: "December 2025"
-layout: "post.njk"
-tags: ["now"]
 date: "2025-12-25"
 ---
-
-December, 2025
 
 Not much happened this month outside of the regular routine. The kids are home from December 19 to January 7th for the holiday break.
 

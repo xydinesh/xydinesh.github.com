@@ -1,11 +1,7 @@
 ---
 title: "Useful, not True"
-layout: "post.njk"
-tags: ["books"]
 date: "2025-11-29"
 ---
-
-November, 2025
 
 Derek Sivers wrote another great book "Useful, not True". This book guide you on how to reframe your perspective to achieve your goals. Small book, a lot of practical advises. Also, Derek is generous to give away his e-books for free.
 

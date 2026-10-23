@@ -1,11 +1,7 @@
 ---
 title: "January 2026"
-layout: "post.njk"
-tags: ["now"]
 date: "2026-01-21"
 ---
-
-January, 2026
 
 ## Yakada Labs
 During holiday break, I made some significant improvements in the Yakada AI agent and prepared some demos to show to potential customers. While it is not perfect, AI agent is in a good place to deploy in a real business.

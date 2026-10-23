@@ -1,11 +1,7 @@
 ---
 title: "November 2025"
-layout: "post.njk"
-tags: ["now"]
 date: "2025-11-28"
 ---
-
-November, 2025
 
 I maintained the now page in my blog and decided to change the format and make it a regular post, with "now" tag. Since these now posts are in frequent I can use the month as title of the page.
 

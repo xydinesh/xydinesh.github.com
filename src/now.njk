@@ -1,0 +1,14 @@
+---
+title: "Now"
+layout: "base.njk"
+permalink: "/now/"
+description: "What I'm focused on, updated every month or so."
+---
+{% from "entry-list.njk" import entryList %}
+{% set nows = collections.now | newestFirst %}
+<h1>Now</h1>
+<p class="page-intro">What I'm focused on, updated every month or so.</p>
+<div class="section-head"><h2>latest</h2></div>
+{{ entryList(nows | head(1), true) }}
+<div class="section-head"><h2>previously</h2></div>
+{{ entryList(nows | skip(1), false) }}

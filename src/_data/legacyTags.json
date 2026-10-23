@@ -1,0 +1,6 @@
+[
+  { "from": "books", "to": "/notes/" },
+  { "from": "writing", "to": "/writing/" },
+  { "from": "now", "to": "/now/" },
+  { "from": "taglist", "to": "/" }
+]
