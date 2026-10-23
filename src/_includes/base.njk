@@ -21,7 +21,7 @@
       <a class="site-name" href="/">{{ site.name }}</a>
       <nav aria-label="Sections">
         {%- for s in site.sections %}
-        <a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% elif page.url.indexOf(s.url) == 0 %} aria-current="true"{% endif %}>{{ s.label }}</a>
+        <a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% elif page.url and page.url.indexOf(s.url) == 0 %} aria-current="true"{% endif %}>{{ s.label }}</a>
         {%- endfor %}
       </nav>
     </div>

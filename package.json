@@ -7,6 +7,7 @@
     "start": "eleventy --serve",
     "clean": "node -e \"require('fs').rmSync('build',{recursive:true,force:true})\"",
     "build": "npm run clean && eleventy",
+    "prod": "npm run build && npx serve build",
     "test": "npm run build && node scripts/check.js && node --test tests/*.test.js",
     "covers": "node scripts/fetch-covers.js"
   },

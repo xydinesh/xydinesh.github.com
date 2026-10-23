@@ -4,6 +4,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const matter = require("gray-matter");
+const { isDraft } = require("./drafts.js");
 
 const ROOT = path.join(__dirname, "..");
 const BUILD = path.join(ROOT, "build");
@@ -74,6 +75,7 @@ function checkLinks() {
 
 function checkContent() {
   const errors = [];
+  const drafts = [];
   let noteCount = 0;
   for (const section of SECTIONS) {
     const dir = path.join(SRC, section);
@@ -84,6 +86,12 @@ function checkContent() {
     for (const file of fs.readdirSync(dir).filter((f) => f.endsWith(".md"))) {
       const slug = path.basename(file, ".md");
       const { data } = matter.read(path.join(dir, file));
+
+      if (isDraft(data)) {
+        drafts.push(`src/${section}/${file}`);
+        continue;
+      }
+
       const err = (msg) => errors.push(`src/${section}/${file}: ${msg}`);
 
       if ("tags" in data) err("must not declare tags (directory data sets them)");
@@ -119,6 +127,7 @@ function checkContent() {
     }
   }
   if (noteCount === 0) errors.push("no notes found in src/notes/");
+  if (drafts.length) console.log(`  skipped ${drafts.length} draft(s): ${drafts.join(", ")}`);
   return errors;
 }
 

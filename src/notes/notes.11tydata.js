@@ -1,11 +1,13 @@
 const fs = require("node:fs");
 const path = require("node:path");
+const { isUnpublished } = require("../../scripts/drafts.js");
 
 module.exports = {
   layout: "note.njk",
   tags: ["notes"],
   eleventyComputed: {
-    permalink: (data) => `/notes/${data.page.fileSlug}/`,
+    eleventyExcludeFromCollections: (data) => (isUnpublished(data) ? true : undefined),
+    permalink: (data) => (isUnpublished(data) ? false : `/notes/${data.page.fileSlug}/`),
     description: (data) => data.summary,
     // Covers are a file-name convention, not a front-matter field.
     coverUrl: (data) => {

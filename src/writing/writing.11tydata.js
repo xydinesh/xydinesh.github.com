@@ -1,7 +1,10 @@
+const { isUnpublished } = require("../../scripts/drafts.js");
+
 module.exports = {
   layout: "article.njk",
   tags: ["writing"],
   eleventyComputed: {
-    permalink: (data) => `/writing/${data.page.fileSlug}/`,
+    eleventyExcludeFromCollections: (data) => (isUnpublished(data) ? true : undefined),
+    permalink: (data) => (isUnpublished(data) ? false : `/writing/${data.page.fileSlug}/`),
   },
 };
