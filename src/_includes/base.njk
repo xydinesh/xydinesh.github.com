@@ -1,71 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-      @media (min-width: 1200px) {
-        :root {
-          --font-size: 14px;
-        }
-      }
-
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      @media (min-width: 768px) {
-        .grid-container {
-          display: grid;
-          grid-template-columns: 1fr 3fr;
-          gap: 2rem;
-        }
-      }
-
-      main {
-        padding-top: 4rem;
-      }
-
-      .homepage-post-list li {
-        list-style-type: none;
-      }
-
-      main li {
-        margin-bottom: 0.2rem;
-      }
-
-      aside > ul > li {
-        padding-bottom: 0.1rem;
-      }
-
-      main h1,
-      main h2,
-      main h3 {
-        margin-bottom: 0.5rem;
-        margin-top: 1rem;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title and title != site.name %}{{ title }} – {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  {% if coverUrl %}<meta property="og:image" content="{{ site.url }}{{ coverUrl }}">{% endif %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body>
-    <div class="container grid-container">
-        <aside>
-            <h3>Topics</h3>
-            <ul>
-            <li><a href="/">home</a></li>
-            {% for tag in collections.tagList %}
-              <li><a href="/tags/{{ tag }}/">{{ tag }}</a></li>
-            {% endfor %}
-            </ul>
-        </aside>
-        <main>
-            {% block content %}
-                {{ content | safe }}
-            {% endblock %}
-        </main>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="site-name" href="/">{{ site.name }}</a>
+      <nav aria-label="Sections">
+        {%- for s in site.sections %}
+        <a href="{{ s.url }}"{% if page.url == s.url %} aria-current="page"{% elif page.url.indexOf(s.url) == 0 %} aria-current="true"{% endif %}>{{ s.label }}</a>
+        {%- endfor %}
+      </nav>
     </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+  <footer class="site-footer wrap meta">© {{ site.author }}</footer>
 </body>
 </html>

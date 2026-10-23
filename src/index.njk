@@ -1,11 +1,24 @@
 ---
-title: "xydinesh.com"
+title: "Dinesh Weerapura"
 layout: "base.njk"
 ---
-<ul class="homepage-post-list">
-{% for post in collections.post %}
-  <li>
-    <a href="{{ post.url }}">{{ post.data.title }}</a>
-  </li>
-{% endfor %}
-</ul>
+{% from "entry-list.njk" import entryList %}
+<section class="home-intro prose">
+  <h1>Hi, I'm Dinesh.</h1>
+  <p>After eight years at Salesforce I started <a href="https://yakadalabs.com">Yakada Labs</a>, where I build custom AI solutions. Here I keep notes on the books I read, the occasional essay, and a monthly update on what I'm focused on now.</p>
+</section>
+
+<section>
+  <div class="section-head"><h2>recent notes</h2><a href="/notes/">all notes →</a></div>
+  {{ entryList(collections.notesByFinished | head(4), false) }}
+</section>
+
+<section>
+  <div class="section-head"><h2>writing</h2><a href="/writing/">all writing →</a></div>
+  {{ entryList(collections.writing | newestFirst | head(3), true) }}
+</section>
+
+<section>
+  <div class="section-head"><h2>now</h2><a href="/now/">previous →</a></div>
+  {{ entryList(collections.now | newestFirst | head(1), true) }}
+</section>

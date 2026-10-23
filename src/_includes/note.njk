@@ -1,0 +1,22 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<article>
+  <header class="note-header">
+    {% if coverUrl %}
+    <img class="cover" src="{{ coverUrl }}" alt="" width="200" height="300">
+    {% else %}
+    <span class="cover tile" aria-hidden="true">{{ title }}</span>
+    {% endif %}
+    <div>
+      <h1>{{ title }}</h1>
+      <dl class="meta note-meta">
+        <dt>by:</dt><dd>{{ author }}</dd>
+        <dt>categories:</dt><dd>{% for c in categories %}<span class="tag">{{ c }}</span> {% endfor %}</dd>
+        <dt>finished:</dt><dd>{{ finished | isoDate }}</dd>
+      </dl>
+    </div>
+  </header>
+  <div class="prose">{{ content | safe }}</div>
+</article>
+{% endblock %}

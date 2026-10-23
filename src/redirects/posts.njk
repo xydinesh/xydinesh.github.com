@@ -1,0 +1,9 @@
+---
+pagination:
+  data: collections.legacy
+  size: 1
+  alias: item
+permalink: "/posts/{{ item.data.legacySlug or item.page.fileSlug }}/index.html"
+eleventyExcludeFromCollections: true
+---
+{% set to = item.url %}{% include "redirect-page.njk" %}

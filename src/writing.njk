@@ -1,0 +1,9 @@
+---
+title: "Writing"
+layout: "base.njk"
+permalink: "/writing/"
+description: "Essays and longer thoughts."
+---
+{% from "entry-list.njk" import entryList %}
+<h1>Writing</h1>
+{{ entryList(collections.writing | newestFirst, true) }}

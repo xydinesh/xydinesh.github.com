@@ -1,0 +1,9 @@
+---
+pagination:
+  data: legacyTags
+  size: 1
+  alias: item
+permalink: "/tags/{{ item.from }}/index.html"
+eleventyExcludeFromCollections: true
+---
+{% set to = item.to %}{% include "redirect-page.njk" %}

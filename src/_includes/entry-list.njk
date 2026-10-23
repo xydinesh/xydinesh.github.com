@@ -1,0 +1,15 @@
+{% macro entryList(entries, withDescription) %}
+<ul class="rows">
+  {%- for e in entries %}
+  <li>
+    <span class="meta row-date">{{ (e.data.finished or e.date) | isoDate }}</span>
+    <span class="row-main">
+      <a href="{{ e.url }}">{{ e.data.title }}</a>{% if e.data.author %} <span class="muted">– {{ e.data.author }}</span>{% endif %}
+      {%- if withDescription and e.data.description %}
+      <span class="row-desc">{{ e.data.description }}</span>
+      {%- endif %}
+    </span>
+  </li>
+  {%- endfor %}
+</ul>
+{% endmacro %}
