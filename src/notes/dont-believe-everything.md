@@ -1,6 +1,10 @@
 ---
 title: "Don't believe everything you think"
-date: 2025-12-27
+author: "Joseph Nguyen"
+finished: "2025-12-27"
+summary: "Suffering comes from thinking about our thoughts, not the thoughts themselves; practice non-thinking through the day."
+categories: [mindfulness, psychology]
+isbn: "9798986406503"
 ---
 
 

@@ -1,6 +1,10 @@
 ---
 title: "Courage to be disliked"
-date: 2025-12-25
+author: "Ichiro Kishimi & Fumitake Koga"
+finished: "2025-12-25"
+summary: "Adlerian psychology as a dialogue: accept yourself, separate your tasks from others, and find the courage to change."
+categories: [psychology, self-acceptance]
+isbn: "9781501197277"
 ---
 
 In this book author presents concepts in Adlerian psychology as a dialogue between a philosopher and a novice.The biggest takeaways from this book for me were, self-acceptance, confidence in others, separation of tasks and pursuit of superiority.

@@ -1,6 +1,10 @@
 ---
 title: "Useful, not True"
-date: "2025-11-29"
+author: "Derek Sivers"
+finished: "2025-11-29"
+summary: "Adopt the belief or perspective that helps you take action."
+categories: [mindset, beliefs]
+isbn: "9780473453046"
 ---
 
 Derek Sivers wrote another great book "Useful, not True". This book guide you on how to reframe your perspective to achieve your goals. Small book, a lot of practical advises. Also, Derek is generous to give away his e-books for free.

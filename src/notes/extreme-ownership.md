@@ -1,6 +1,10 @@
 ---
 title: "Extreme Ownership"
-date: 2025-12-31
+author: "Jocko Willink & Leif Babin"
+finished: "2025-12-31"
+summary: "Leaders own everything in their world. Most useful when moving from individual contributor to manager."
+categories: [leadership, management]
+isbn: "9781250067050"
 legacySlug: "exterme-ownership"
 ---
 

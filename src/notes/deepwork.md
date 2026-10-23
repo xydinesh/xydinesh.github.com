@@ -1,6 +1,10 @@
 ---
 title: "Deep Work"
-date: 2025-11-25
+author: "Cal Newport"
+finished: "2025-11-25"
+summary: "Long, uninterrupted focus is rare and valuable; build rules and rituals that protect it."
+categories: [productivity, focus]
+isbn: "9781455586691"
 ---
 
 This week I read Deep Work by Cal Newport. It highlights the value of focusing on something for long period of time. This post contains some of the highlights from the book.

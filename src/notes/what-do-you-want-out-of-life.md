@@ -1,6 +1,10 @@
 ---
 title: "What Do You Want Out of Life?"
-date: 2026-02-01
+author: "Valerie Tiberius"
+finished: "2026-02-01"
+summary: "Values are our most important goals; knowing them resolves the conflicts that stop us from moving forward."
+categories: [values, philosophy]
+isbn: "9780691240695"
 ---
 
 ## Table of Contents

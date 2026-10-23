@@ -1,5 +1,13 @@
 ---
-title: "Courage to be disliked"
-date: 2025-12-25
+title: "Book Title"
+author: "Author Name"
+finished: "YYYY-MM-DD"
+summary: "One-sentence take, 140 characters max."
+categories: [category-one, category-two]
+isbn: "9780000000000"
+rating: 7
 ---
 
+Intro paragraph.
+
+## Table of Contents

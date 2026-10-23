@@ -1,6 +1,10 @@
 ---
 title: "Principles (Life)"
-date: 2026-01-25
+author: "Ray Dalio"
+finished: "2026-01-25"
+summary: "Treat problems as puzzles, embrace reality, and use a five-step process to turn mistakes into principles."
+categories: [decision-making, life]
+isbn: "9781501124020"
 ---
 
 The Principles by Ray Dalio has three main sections. First section is an introduction about his life and how did he get to where he is today. The second part is about life principles and, the third section is about work principles. This is not the easiest book to read, but there are a lot of useful information packed in it. This notes are from the second section the book.
