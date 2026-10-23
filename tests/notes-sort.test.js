@@ -48,3 +48,14 @@ test("sortItems does not mutate its input", () => {
   sortItems(items, "title");
   assert.deepEqual(titles(items), before);
 });
+
+test("ties fall back to newest finished, whatever order the cards are currently in", () => {
+  const afterTitleSort = sortItems(items, "title");
+  assert.deepEqual(titles(sortItems(afterTitleSort, "rating")), [
+    "principles (life)", "extreme ownership", "deep work", "show your work",
+  ]);
+  const unrated = items.map((x) => li(x.dataset.title, x.dataset.finished, 0));
+  assert.deepEqual(titles(sortItems(sortItems(unrated, "title"), "rating")), [
+    "principles (life)", "show your work", "extreme ownership", "deep work",
+  ]);
+});
