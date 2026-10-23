@@ -17,6 +17,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=22"
+  },
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/xydinesh/xydinesh.github.com/issues"
